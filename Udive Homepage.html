@@ -43,7 +43,6 @@
     "name": "UDIVE Tioman",
     "description": "PADI 5 Star Career Development Center in Tioman Island, Malaysia. Offering dive courses, fun dives, freediving, and accommodation.",
     "url": "https://udivetioman.com",
-    "telephone": "+60-XXX-XXXXXXX",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Paya Village",
@@ -93,7 +92,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="udive-styles.css?v=3">
+  <link rel="stylesheet" href="udive-styles.css?v=5">
   <style>
     /* FOUT guard */
     body { opacity: 1; }
@@ -126,6 +125,9 @@
       <img src="udive.png" alt="Udive">
     </a>
     <div class="nav__links">
+      <a href="#stay" class="nav__link" data-i18n="hero.stay">Stay</a>
+      <a href="#courses" class="nav__link" data-i18n="nav.courses">Courses</a>
+      <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
     </div>
     <div style="display:flex;align-items:center;gap:var(--space-6)">
       <div class="nav__lang">
@@ -141,7 +143,10 @@
 <!-- Mobile nav overlay + drawer -->
 <div class="nav__overlay" id="navOverlay"></div>
 <div class="nav__drawer" id="navDrawer">
-  <a href="#book"    class="btn btn--primary" style="align-self:flex-start;margin-top:var(--space-4)" data-i18n="nav.book">Book Now</a>
+  <a href="#stay" class="nav__link" data-i18n="hero.stay">Stay</a>
+  <a href="#courses" class="nav__link" data-i18n="nav.courses">Courses</a>
+  <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
+  <a href="#book" class="btn btn--primary" style="align-self:flex-start;margin-top:var(--space-4)" data-i18n="nav.book">Book Now</a>
   <div class="nav__lang">
     <button class="active" data-lang="en">EN</button>
     <button data-lang="zh">中文</button>
@@ -170,6 +175,7 @@
       <img src="3.png" alt="Turtle encounter in Tioman waters" class="hero__photo" loading="lazy">
     </div>
   </div>
+  <div class="hero__content">
     <div data-i18n="hero.eyebrow" class="hero__eyebrow" id="heroEyebrow">Paya Village, Tioman Island</div>
     <h1 class="hero__title" id="heroTitle" data-i18n="hero.title" data-i18n-html>ONE ISLAND<br>ENDLESS<br>DEPTHS</h1>
     <p class="hero__script" id="heroScript" data-i18n="hero.script">From your first breath to your best dive</p>
@@ -181,22 +187,6 @@
       <a href="#contact" class="btn btn--glass" data-i18n="hero.contact">Contact Us</a>
       <a href="#event" class="btn btn--glass" data-i18n="hero.event">Our Event</a>
     </div>
-    <div class="hero__meta" id="heroMeta">
-      <div class="hero__meta-item">
-        <span class="hero__meta-num">15+</span>
-        <span class="hero__meta-label" data-i18n="hero.meta1">Years</span>
-      </div>
-      <div class="hero__meta-divider"></div>
-      <div class="hero__meta-item">
-        <span class="hero__meta-num">5,000+</span>
-        <span class="hero__meta-label" data-i18n="hero.meta2">Certified</span>
-      </div>
-      <div class="hero__meta-divider"></div>
-      <div class="hero__meta-item">
-        <span class="hero__meta-num">20+</span>
-        <span class="hero__meta-label" data-i18n="hero.meta3">Dive Sites</span>
-      </div>
-    </div>
   </div>
   <!-- About Us panel — slides in from the right -->
   <div class="hero__about-panel" id="heroAboutPanel">
@@ -206,7 +196,7 @@
     </div>
     <div class="hero__about-inner">
       <h3 class="hero__about-heading">Est. Since 2010</h3>
-      <p class="hero__about-text">UDIVE Tioman located in Paya Village, Tioman Island. Is a PADI awarded 5 Star Career Development Center (CDC). Once your ferry arrive in Paya Jetty, you can easily find UDIVE just on the left hand side of the island.</p>
+      <p class="hero__about-text">UDIVE Tioman is located in Paya Village, Tioman Island — a PADI 5 Star Career Development Center (CDC). Once your ferry arrives at Paya Jetty, you can find UDIVE just on the left-hand side of the island.</p>
       <div class="hero__about-divider"></div>
       <p class="hero__about-tagline">PADI 5 Star CDC — Tioman Island, Malaysia</p>
     </div>
@@ -264,7 +254,7 @@
 <!-- ═══════════════════════════════════════
      EDITORIAL STORY — side-curtain flip
 ═══════════════════════════════════════ -->
-<section class="section editorial-story" id="story">
+<section class="section editorial-story" id="stay">
   <div class="container">
     <div class="editorial-story__panels">
 
@@ -718,29 +708,29 @@
       <p class="section__desc" style="margin-inline:auto;text-align:center" data-anim="fadeInUp" data-delay="200">PADI-certified professionals with thousands of dives and a passion for sharing the underwater world.</p>
     </div>
     <div class="team__grid">
-      <div class="team__member" data-anim="fadeInUp" data-delay="0">
+      <div class="team__member team__member--featured" data-anim="fadeInUp" data-delay="0">
         <div class="team__avatar"><img src="team.jpg" alt="Steven Sim" loading="lazy"></div>
         <h4 class="team__name">Steven Sim</h4>
         <p class="team__role">PADI Course Director</p>
         <p class="team__bio">8,000+ dives. Teaching since 2010. Specializes in technical diving and marine conservation.</p>
       </div>
       <div class="team__member" data-anim="fadeInUp" data-delay="100">
-        <div class="team__avatar"><img src="team.jpg" alt="Steven Sim" loading="lazy"></div>
-        <h4 class="team__name">Steven Sim</h4>
+        <div class="team__avatar team__avatar--role" aria-hidden="true">MI</div>
+        <h4 class="team__name">UDIVE Instructor</h4>
         <p class="team__role">PADI Master Instructor</p>
-        <p class="team__bio">5,000+ dives. Expert in beginner training. Fluent in English, Mandarin, and Malay.</p>
+        <p class="team__bio">Expert in beginner training. Fluent in English, Mandarin, and Malay.</p>
       </div>
       <div class="team__member" data-anim="fadeInUp" data-delay="200">
-        <div class="team__avatar"><img src="team.jpg" alt="Steven Sim" loading="lazy"></div>
-        <h4 class="team__name">Steven Sim</h4>
+        <div class="team__avatar team__avatar--role" aria-hidden="true">IDC</div>
+        <h4 class="team__name">UDIVE Instructor</h4>
         <p class="team__role">PADI IDC Staff Instructor</p>
-        <p class="team__bio">4,500+ dives. Underwater photography specialist. Published in National Geographic.</p>
+        <p class="team__bio">Underwater photography specialist guiding divers across Tioman's reefs.</p>
       </div>
       <div class="team__member" data-anim="fadeInUp" data-delay="300">
-        <div class="team__avatar"><img src="team.jpg" alt="Steven Sim" loading="lazy"></div>
-        <h4 class="team__name">Steven Sim</h4>
+        <div class="team__avatar team__avatar--role" aria-hidden="true">OW</div>
+        <h4 class="team__name">UDIVE Instructor</h4>
         <p class="team__role">PADI Open Water Instructor</p>
-        <p class="team__bio">3,000+ dives. Marine biologist background. Passionate about coral restoration.</p>
+        <p class="team__bio">Passionate about coral restoration and safe first-breath experiences.</p>
       </div>
     </div>
   </div>
@@ -854,8 +844,8 @@
       <h2 class="final-cta__title" data-anim="fadeInUp" data-delay="0">The Ocean Is<br><em>Waiting</em></h2>
       <p class="final-cta__desc" data-anim="fadeInUp" data-delay="120">Every day you wait is another day the underwater world remains unseen. Your first dive — or your next certification — is one message away.</p>
       <div class="final-cta__btns" data-anim="fadeInUp" data-delay="240">
-        <a href="https://wa.me/60123456789" class="btn btn--primary" target="_blank" rel="noopener">data-i18n="cta.whatsapp">Book on WhatsApp</a>
-        <a href="https://instagram.com/udive.tioman" class="btn btn--glass" target="_blank" rel="noopener">data-i18n="cta.instagram">DM on Instagram</a>
+        <a href="https://instagram.com/udive.tioman" class="btn btn--primary" target="_blank" rel="noopener" data-i18n="cta.instagram">DM on Instagram</a>
+        <a href="#courses" class="btn btn--glass" data-i18n="hero.courses">Courses</a>
       </div>
     </div>
   </div>
@@ -874,82 +864,48 @@
       <div>
         <h4 data-i18n="footer.courses" class="footer__heading">Courses</h4>
         <ul class="footer__links">
-          <li><a href="#" data-i18n="footer.discover" data-i18n="footer.discover" class="footer__link">Discover Scuba</a></li>
-          <li><a href="#" data-i18n="footer.ow" data-i18n="footer.ow" class="footer__link">Open Water</a></li>
-          <li><a href="#" data-i18n="footer.aow" data-i18n="footer.aow" class="footer__link">Advanced OW</a></li>
-          <li><a href="#" data-i18n="footer.rescue" data-i18n="footer.rescue" class="footer__link">Rescue Diver</a></li>
-          <li><a href="#" data-i18n="footer.specialty" data-i18n="footer.specialty" class="footer__link">Specialty Courses</a></li>
+          <li><a href="#courses" data-i18n="footer.discover" class="footer__link">Discover Scuba</a></li>
+          <li><a href="#courses" data-i18n="footer.ow" class="footer__link">Open Water</a></li>
+          <li><a href="#courses" data-i18n="footer.aow" class="footer__link">Advanced OW</a></li>
+          <li><a href="#courses" data-i18n="footer.rescue" class="footer__link">Rescue Diver</a></li>
+          <li><a href="#courses" data-i18n="footer.specialty" class="footer__link">Specialty Courses</a></li>
         </ul>
       </div>
       <div>
         <h4 data-i18n="footer.explore" class="footer__heading">Explore</h4>
         <ul class="footer__links">
-          <li><a href="#" class="footer__link">Dive Sites</a></li>
-          <li><a href="#" data-i18n="footer.fundive" data-i18n="footer.fundive" class="footer__link">Fun Dive</a></li>
-          <li><a href="#" data-i18n="footer.packages" data-i18n="footer.packages" class="footer__link">Packages</a></li>
-          <li><a href="#" data-i18n="footer.accom" data-i18n="footer.accom" class="footer__link">Accommodation</a></li>
-          <li><a href="#" data-i18n="footer.blog" data-i18n="footer.blog" class="footer__link">Blog</a></li>
+          <li><a href="#map" class="footer__link">Dive Sites</a></li>
+          <li><a href="#courses" data-i18n="footer.fundive" class="footer__link">Fun Dive</a></li>
+          <li><a href="#courses" data-i18n="footer.packages" class="footer__link">Packages</a></li>
+          <li><a href="#stay" data-i18n="footer.accom" class="footer__link">Accommodation</a></li>
         </ul>
       </div>
       <div>
         <h4 data-i18n="footer.contact" class="footer__heading">Contact</h4>
         <ul class="footer__links">
-          <li><a href="#" data-i18n="footer.address" data-i18n="footer.address" class="footer__link">Tioman Island, Malaysia</a></li>
-          <li><a href="tel:+60123456789" class="footer__link">+60 12-345 6789</a></li>
-          <li><a href="mailto:hello@udive.com" class="footer__link">hello@udive.com</a></li>
-          <li><a href="https://wa.me/60123456789" data-i18n="footer.whatsapp" class="footer__link" target="_blank">WhatsApp</a></li>
-          <li><a href="https://instagram.com/udive.tioman" data-i18n="footer.instagram" class="footer__link" target="_blank">Instagram</a></li>
+          <li><span data-i18n="footer.address" class="footer__link footer__link--static">Paya Village, Tioman Island, Malaysia</span></li>
+          <li><a href="https://instagram.com/udive.tioman" data-i18n="footer.instagram" class="footer__link" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://instagram.com/udive.tioman" class="footer__link" target="_blank" rel="noopener">@udive.tioman</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
       <p class="footer__copy">&copy; 2026 Udive. All rights reserved. PADI 5 Star IDC.</p>
       <div class="footer__socials">
-        <a href="#" class="footer__social">Instagram</a>
-        <a href="#" class="footer__social">Facebook</a>
-        <a href="#" class="footer__social">YouTube</a>
-        <a href="#" class="footer__social">WeChat</a>
+        <a href="https://instagram.com/udive.tioman" class="footer__social" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </div>
 </footer>
 
 <!-- ═══════════════════════════════════════
-     FLOATING WHATSAPP
+     FLOATING INSTAGRAM
 ═══════════════════════════════════════ -->
-<a href="https://wa.me/60123456789" class="wa-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L0 24l6.335-1.508A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.498-5.194-1.37l-.372-.22-3.861.919.976-3.768-.242-.386A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+<a href="https://instagram.com/udive.tioman" class="wa-float" target="_blank" rel="noopener" title="Message on Instagram" aria-label="Message on Instagram">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
   </svg>
 </a>
-
-<!-- ═══════════════════════════════════════
-     TWEAKS PANEL
-═══════════════════════════════════════ -->
-<div class="tweaks-panel" id="tweaksPanel">
-  <div class="tweaks-panel__header">
-    <span class="tweaks-panel__title">Tweaks</span>
-    <button class="tweaks-panel__close" id="tweaksClose">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l10 10M11 1L1 11"/></svg>
-    </button>
-  </div>
-  <div>
-    <span class="tweaks-label">Design Variant</span>
-    <div class="tweaks-options">
-      <button class="tweaks-opt active" data-variant="refined">Refined</button>
-      <button class="tweaks-opt" data-variant="editorial">Editorial</button>
-    </div>
-  </div>
-  <div>
-    <span class="tweaks-label">Accent Colour</span>
-    <div class="tweaks-swatches">
-      <div class="tweaks-swatch active" data-accent="red"   style="background:oklch(55% 0.22 25)" title="Udive Red"></div>
-      <div class="tweaks-swatch"        data-accent="teal"  style="background:oklch(65% 0.14 185)" title="Ocean Teal"></div>
-      <div class="tweaks-swatch"        data-accent="gold"  style="background:oklch(72% 0.12 70)" title="Warm Gold"></div>
-    </div>
-  </div>
-</div>
 
 <!-- ═══════════════════════════════════════
      SCRIPTS
@@ -996,8 +952,7 @@ heroTl
   .to('#heroTitle',   { opacity:1, y:0, duration:1.0 }, '-=0.4')
   .to('#heroScript',  { opacity:1, y:0, duration:0.7 }, '-=0.5')
   .to('#heroSubtitle',{ opacity:1, y:0, duration:0.8 }, '-=0.4')
-  .to('#heroCtas',    { opacity:1, y:0, duration:0.7 }, '-=0.4')
-  .to('#heroMeta',    { opacity:1, y:0, duration:0.7 }, '-=0.4');
+  .to('#heroCtas',    { opacity:1, duration:0.7 }, '-=0.4');
 
 /* Hero subtitle rotation (GSAP cross-fade) */
 const subtitles = [
@@ -1160,35 +1115,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
     const t = document.querySelector(href);
     if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
-  });
-});
-
-/* ── Tweaks Panel ── */
-const TWEAK_DEFAULTS = {"variant":"refined","accent":"red"};
-let tweaks = { ...TWEAK_DEFAULTS };
-
-function applyTweaks() {
-  document.documentElement.dataset.variant = tweaks.variant;
-  document.documentElement.dataset.accent  = tweaks.accent;
-  document.querySelectorAll('.tweaks-opt').forEach(b => b.classList.toggle('active', b.dataset.variant === tweaks.variant));
-  document.querySelectorAll('.tweaks-swatch').forEach(s => s.classList.toggle('active', s.dataset.accent === tweaks.accent));
-}
-applyTweaks();
-
-const panel = document.getElementById('tweaksPanel');
-document.getElementById('tweaksClose').addEventListener('click', () => {
-  panel.classList.remove('open');
-});
-document.querySelectorAll('.tweaks-opt').forEach(b => {
-  b.addEventListener('click', () => {
-    tweaks.variant = b.dataset.variant;
-    applyTweaks();
-  });
-});
-document.querySelectorAll('.tweaks-swatch').forEach(s => {
-  s.addEventListener('click', () => {
-    tweaks.accent = s.dataset.accent;
-    applyTweaks();
   });
 });
 
@@ -1481,14 +1407,14 @@ document.querySelectorAll('.ch-card__tab').forEach(tab => {
     'faq.q5':             { en: 'How do I get to Tioman Island?', zh: '如何前往刁曼島？' },
     'cta.title':          { en: 'The Ocean Is<br><em>Waiting</em>', zh: '海洋<br>正在<em>等待</em>' },
     'cta.desc':           { en: 'Every day you wait is another day the underwater world remains unseen.', zh: '你等待的每一天，都是水下世界未被看見的一天。' },
-    'cta.whatsapp':       { en: 'data-i18n="cta.whatsapp">Book on WhatsApp', zh: '透過 WhatsApp 預訂' },
-    'cta.instagram':      { en: 'data-i18n="cta.instagram">DM on Instagram', zh: 'Instagram 私訊' },
+    'cta.whatsapp':       { en: 'Book on WhatsApp', zh: '透過 WhatsApp 預訂' },
+    'cta.instagram':      { en: 'DM on Instagram', zh: 'Instagram 私訊' },
     'footer.desc':        { en: 'Professional diving experiences in Tioman Island, Malaysia.', zh: '馬來西亞刁曼島專業潛水體驗。' },
     'footer.courses':     { en: 'Courses', zh: '課程' },
     'footer.explore':     { en: 'Explore', zh: '探索' },
     'footer.packages':    { en: 'Packages', zh: '配套' },
     'footer.accom':       { en: 'Accommodation', zh: '住宿' },
-    'footer.address':     { en: 'Tioman Island, Malaysia', zh: '馬來西亞·刁曼島' },
+    'footer.address':     { en: 'Paya Village, Tioman Island, Malaysia', zh: '馬來西亞刁曼島·Paya Village' },
     'footer.copyright':   { en: '© 2026 Udive. All rights reserved. PADI 5 Star IDC.', zh: '© 2026 Udive. 版權所有。PADI 五星 IDC。' },
     'footer.blog':        { en: 'Blog', zh: '部落格' },
     'pricing.pricing':    { en: 'Pricing & Packages', zh: '價格與配套' },
@@ -1587,7 +1513,8 @@ document.querySelectorAll('.ch-card__tab').forEach(tab => {
       );
       // Show map hover
       if (mapEl) mapEl.classList.add('visible');
-      aboutBtn.textContent = 'Back';
+      const lang = localStorage.getItem('udive_lang') === 'zh' ? 'zh' : 'en';
+      aboutBtn.textContent = lang === 'zh' ? '返回' : 'Back';
       showing = true;
     } else {
       // ── Close ──
@@ -1607,7 +1534,8 @@ document.querySelectorAll('.ch-card__tab').forEach(tab => {
       panel.classList.remove('open');
       // Hide map hover
       if (mapEl) mapEl.classList.remove('visible');
-      aboutBtn.textContent = 'About Us';
+      const lang = localStorage.getItem('udive_lang') === 'zh' ? 'zh' : 'en';
+      aboutBtn.textContent = lang === 'zh' ? '關於我們' : 'About Us';
       showing = false;
     }
   }
