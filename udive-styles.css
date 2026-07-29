@@ -286,7 +286,7 @@ ul { list-style:none; }
 }
 /* ── About Us panel — slides in from the right ── */
 .hero__about-panel {
-  position: absolute; right: var(--space-20); top: 50%;
+  position: absolute; right: calc(var(--space-20) + var(--space-6)); top: 50%;
   transform: translateY(-50%) translateX(40px);
   z-index: 12; width: min(380px, 30vw);
   opacity: 0; pointer-events: none;
