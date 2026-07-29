@@ -92,7 +92,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="udive-styles.css?v=6">
+  <link rel="stylesheet" href="udive-styles.css?v=7">
   <style>
     /* FOUT guard */
     body { opacity: 1; }
@@ -200,6 +200,10 @@
       <div class="hero__about-divider"></div>
       <p class="hero__about-tagline">PADI 5 Star CDC — Tioman Island, Malaysia</p>
     </div>
+    <button class="hero__about-back" id="heroAboutBack" type="button">
+      <span aria-hidden="true">←</span>
+      <span>Back</span>
+    </button>
   </div>
   <!-- Event poster — fades in on desktop when "Our Event" is clicked -->
   <img src="event-poster.png" alt="UDIVE Tioman Event Poster" class="hero__event-poster" id="heroEventPoster">
@@ -1462,6 +1466,8 @@ document.querySelectorAll('.ch-card__tab').forEach(tab => {
   if (!aboutBtn) return;
   const panel = document.getElementById('heroAboutPanel');
   if (!panel) return;
+  const backBtn = document.getElementById('heroAboutBack');
+  if (!backBtn) return;
   const mapEl = document.querySelector('.hero__map-hover');
 
   // Left hero elements to update
@@ -1513,8 +1519,6 @@ document.querySelectorAll('.ch-card__tab').forEach(tab => {
       );
       // Show map hover
       if (mapEl) mapEl.classList.add('visible');
-      const lang = localStorage.getItem('udive_lang') === 'zh' ? 'zh' : 'en';
-      aboutBtn.textContent = lang === 'zh' ? '返回' : 'Back';
       showing = true;
     } else {
       // ── Close ──
@@ -1534,14 +1538,13 @@ document.querySelectorAll('.ch-card__tab').forEach(tab => {
       panel.classList.remove('open');
       // Hide map hover
       if (mapEl) mapEl.classList.remove('visible');
-      const lang = localStorage.getItem('udive_lang') === 'zh' ? 'zh' : 'en';
-      aboutBtn.textContent = lang === 'zh' ? '關於我們' : 'About Us';
       showing = false;
     }
   }
 
   aboutBtn.addEventListener('click', toggleAbout);
   aboutBtn.addEventListener('touchstart', function(e) { toggleAbout(e); }, { passive: false });
+  backBtn.addEventListener('click', toggleAbout);
 })();
 
 /* ── Our Event toggle — fade poster on right ── */

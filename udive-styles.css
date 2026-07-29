@@ -304,6 +304,37 @@ ul { list-style:none; }
   border-radius: 12px;
   padding: var(--space-8);
 }
+.hero__about-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: fit-content;
+  margin-top: var(--space-3);
+  margin-left: auto;
+  min-height: 42px;
+  padding: 0.65rem 1rem;
+  color: oklch(96% 0.01 250 / 0.94);
+  background: oklch(12% 0.02 250 / 0.42);
+  border: 1px solid oklch(100% 0 0 / 0.18);
+  border-radius: 999px;
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  box-shadow: 0 8px 28px oklch(0% 0 0 / 0.28);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.hero__about-back:hover,
+.hero__about-back:focus-visible {
+  background: oklch(18% 0.025 250 / 0.62);
+  border-color: oklch(100% 0 0 / 0.34);
+  transform: translateY(-2px);
+  outline: none;
+}
 .hero__about-heading {
   font-family: var(--font-display);
   font-size: var(--text-sm);
@@ -410,26 +441,11 @@ ul { list-style:none; }
   }
   .hero__ctas .btn--glass:hover::after { width: 100%; }
   .hero__content { padding: var(--space-12) var(--space-12) var(--space-40); }
-  .hero:has(.hero__about-panel.open) .hero__ctas .btn--glass:not([data-i18n="hero.about"]),
+  .hero:has(.hero__about-panel.open) .hero__ctas .btn--glass,
   .hero:has(.hero__event-poster.open) .hero__ctas .btn--glass:not([data-i18n="hero.event"]) {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.35s ease;
-  }
-  .hero:has(.hero__about-panel.open) .hero__ctas {
-    right: clamp(0.75rem, 1.5vw, 1.25rem);
-  }
-  .hero:has(.hero__about-panel.open) .hero__ctas .btn--glass[data-i18n="hero.about"] {
-    padding: 0.65rem 1rem;
-    color: #fff;
-    background: oklch(55% 0.22 25 / 0.92);
-    border: 1px solid oklch(78% 0.14 25 / 0.8);
-    border-radius: 999px;
-    box-shadow: 0 8px 28px oklch(0% 0 0 / 0.42), 0 0 22px oklch(55% 0.22 25 / 0.28);
-    text-shadow: none;
-  }
-  .hero:has(.hero__about-panel.open) .hero__ctas .btn--glass[data-i18n="hero.about"]::after {
-    display: none;
   }
 }
 .hero__eyebrow {
