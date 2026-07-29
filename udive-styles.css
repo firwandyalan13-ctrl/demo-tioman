@@ -967,8 +967,8 @@ ul { list-style:none; }
 /* ============================================================
    FLOATING WHATSAPP
    ============================================================ */
-.wa-float { position:fixed; bottom:28px; right:28px; z-index:900; width:56px; height:56px; border-radius:50%; background:var(--color-accent); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 24px oklch(55% 0.22 25 / 0.4); transition:transform var(--dur-fast), box-shadow var(--dur-fast); color:#fff; }
-.wa-float:hover { transform:scale(1.12) translateY(-2px); box-shadow:0 8px 32px oklch(55% 0.22 25 / 0.55); }
+.wa-float { position:fixed; bottom:28px; right:28px; z-index:900; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 24px rgb(37 211 102 / 0.4); transition:transform var(--dur-fast), background var(--dur-fast), box-shadow var(--dur-fast); color:#fff; }
+.wa-float:hover { background:#20BA5A; transform:scale(1.12) translateY(-2px); box-shadow:0 8px 32px rgb(37 211 102 / 0.55); }
 .wa-float svg { width:26px; height:26px; }
 .footer__link--static { cursor:default; pointer-events:none; color:var(--color-text-muted); }
 
