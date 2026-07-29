@@ -211,4 +211,3 @@ https://firwandyalan13-ctrl.github.io/demo-tioman/Udive%20Homepage.html
 ```
 
 Verify the live page loads `udive-styles.css?v=7` and reproduces all four checks from Step 1. Do not modify cPanel in this task.
-

@@ -37,4 +37,3 @@ Replace the red About-panel Back control with a restrained glass-style button po
 - No red background remains on the Back control.
 - Back closes the panel and restores the hero navigation.
 - The GitHub Pages preview loads the new CSS cache version.
-
