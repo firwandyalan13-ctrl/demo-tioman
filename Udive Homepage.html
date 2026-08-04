@@ -92,7 +92,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="udive-styles.css?v=7">
+  <link rel="stylesheet" href="udive-styles.css?v=8">
   <style>
     /* FOUT guard */
     body { opacity: 1; }
@@ -344,296 +344,183 @@
 <!-- ═══════════════════════════════════════
      COURSES — sticky chapter scroll
 ═══════════════════════════════════════ -->
-<div class="ch-scroll-container">
-<section class="section ch-section" id="courses">
+<!-- ═══════════════════════════════════════
+     OUR PROGRAMS — pin chapters
+═══════════════════════════════════════ -->
+<section class="pin-intro" id="courses">
   <div class="container">
-    <div class="ch-layout">
-
-      <!-- ── LEFT ANCHOR ── -->
-      <div class="ch-anchor" id="our-programs" data-anim="fadeInLeft" data-delay="0">
-        <div class="ch-anchor__ghost">05</div>
-        <p data-i18n="courses.eyebrow" class="ch-anchor__eyebrow">Our Programs</p>
-        <h2 data-i18n="courses.title" data-i18n-html class="ch-anchor__title">A JOURNEY<br>THAT UNFOLDS<br>IN DEPTHS</h2>
-        <p data-i18n="courses.script" class="ch-anchor__script">Choose Your Depth</p>
-        <p data-i18n="courses.body" class="ch-anchor__body">Every diver's path is unique. From your very first breath underwater to mastery of the deep — each program is a chapter in your story.</p>
-        <p data-i18n="courses.tags" class="ch-anchor__tags">CERTIFY / ADVANCE / RESCUE / FUN DIVE / FREEDIVER</p>
-      </div>
-
-      <!-- ── SPINE + CARDS ── -->
-      <div class="ch-spine-wrap" data-anim="fadeIn" data-delay="200">
-
-        <!-- Vertical spine line -->
-        <div class="ch-spine-line"></div>
-
-        <!-- Chapter 01 — Open Water Diver (right card, with pricing) -->
-        <div class="ch-row ch-row--right ch-row--pricing">
-          <div class="ch-pricing">
-            <button class="ch-pricing__close" aria-label="Close pricing">
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 2l12 12M14 2L2 14"/></svg>
-            </button>
-            <h3 class="ch-pricing__title" data-i18n="pricing.pricing">Pricing &amp; Packages</h3>
-            <p class="ch-pricing__note" data-i18n="pricing.note">* Price per person 每人价格</p>
-            <div class="ch-pricing__list">
-              <div class="ch-pricing__row"><span>自行安排住宿 <em>W/O Accommodation</em></span><span class="ch-pricing__price">RM 1,350</span></div>
-              <div class="ch-pricing__row"><span>单人房 <em>Standard Single Room</em></span><span class="ch-pricing__price">RM 1,890</span></div>
-              <div class="ch-pricing__row"><span>双人房 <em>Standard Twin Room</em></span><span class="ch-pricing__price">RM 1,630</span></div>
-              <div class="ch-pricing__row"><span>三人房 <em>Standard Triple Room</em></span><span class="ch-pricing__price">RM 1,560</span></div>
-              <div class="ch-pricing__row"><span>四人房 <em>Standard Quad Room</em></span><span class="ch-pricing__price">RM 1,510</span></div>
-              <div class="ch-pricing__row"><span>6 人床位（混性别）含早餐 <em>6 Bed Mixed Dorm</em></span><span class="ch-pricing__price">RM 1,480</span></div>
-              <div class="ch-pricing__row"><span>海景双人房 含早餐 <em>Seaview Double Room</em></span><span class="ch-pricing__price">RM 1,750</span></div>
-              <div class="ch-pricing__row"><span>海景单人房 含早餐 <em>Seaview Single Room</em></span><span class="ch-pricing__price">RM 2,170</span></div>
-            </div>
-            <div class="ch-pricing__foot">
-              <p class="ch-pricing__footnote" data-i18n="pricing.footnote">Includes PADI materials, equipment, instructor fees, boat transfers &amp; certification.</p>
-              <a href="#book" class="btn btn--primary" style="width:100%;" data-i18n="pricing.dive">Dive Now</a>
-            </div>
-          </div>
-          <div class="ch-dot-wrap" data-anim="zoomIn" data-delay="0">
-            <div class="ch-dot"></div>
-            <span class="ch-dot-num">01</span>
-          </div>
-          <div class="ch-card ch-card--featured" data-anim="fadeInRight" data-delay="0">
-            <p class="ch-card__chapter" data-anim="fadeInUp" data-delay="80">Chapter One</p>
-            <h3 class="ch-card__title" data-anim="fadeInUp" data-delay="150">OPEN WATER<br>DIVER</h3>
-            <p data-i18n="ch1.script" class="ch-card__script" data-anim="fadeInUp" data-delay="220">The World Opens Up</p>
-            <p data-i18n="ch1.body" class="ch-card__body" data-anim="fadeInUp" data-delay="290">The world's most popular certification. 3–4 days of theory, confined water and 4 open water dives to 18m.</p>
-            <div class="ch-card__rule" data-anim="fadeIn" data-delay="350"></div>
-            <div class="ch-card__foot" data-anim="fadeInUp" data-delay="400">
-              <button class="ch-show-pricing" data-toggle-pricing data-i18n="pricing.toggle">Pricing ▸</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Chapter 02 — Advanced Open Water (left card, with pricing) -->
-        <div class="ch-row ch-row--left ch-row--pricing">
-          <div class="ch-card" data-anim="fadeInLeft" data-delay="0">
-            <p class="ch-card__chapter" data-anim="fadeInUp" data-delay="80">Chapter Two</p>
-            <h3 class="ch-card__title" data-anim="fadeInUp" data-delay="150">ADVANCED<br>OPEN WATER</h3>
-            <p data-i18n="ch2.script" class="ch-card__script" data-anim="fadeInUp" data-delay="220">Go Deeper</p>
-            <p data-i18n="ch2.body" class="ch-card__body" data-anim="fadeInUp" data-delay="290">Five adventure dives including deep diving to 30m, navigation, and underwater photography.</p>
-            <div class="ch-card__rule" data-anim="fadeIn" data-delay="350"></div>
-            <div class="ch-card__foot" data-anim="fadeInUp" data-delay="400">
-              <button class="ch-show-pricing" data-toggle-pricing data-i18n="pricing.toggle">Pricing ▸</button>
-            </div>
-          </div>
-          <div class="ch-dot-wrap" data-anim="zoomIn" data-delay="0">
-            <span class="ch-dot-num">02</span>
-            <div class="ch-dot"></div>
-          </div>
-          <div class="ch-pricing">
-            <button class="ch-pricing__close" aria-label="Close pricing">
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 2l12 12M14 2L2 14"/></svg>
-            </button>
-            <h3 class="ch-pricing__title" data-i18n="pricing.pricing">Pricing &amp; Packages</h3>
-            <p class="ch-pricing__note" data-i18n="pricing.note">* Price per person 每人价格</p>
-            <div class="ch-pricing__list">
-              <div class="ch-pricing__row"><span>自行安排住宿 <em>W/O Accommodation</em></span><span class="ch-pricing__price">RM 1,180</span></div>
-              <div class="ch-pricing__row"><span>单人房 <em>Standard Single Room</em></span><span class="ch-pricing__price">RM 1,580</span></div>
-              <div class="ch-pricing__row"><span>双人房 <em>Standard Twin Room</em></span><span class="ch-pricing__price">RM 1,380</span></div>
-              <div class="ch-pricing__row"><span>三人房 <em>Standard Triple Room</em></span><span class="ch-pricing__price">RM 1,330</span></div>
-              <div class="ch-pricing__row"><span>四人房 <em>Standard Quad Room</em></span><span class="ch-pricing__price">RM 1,300</span></div>
-              <div class="ch-pricing__row"><span>6 人床位（混性别）含早餐 <em>6 Bed Mixed Dorm</em></span><span class="ch-pricing__price">RM 1,290</span></div>
-              <div class="ch-pricing__row"><span>海景双人房 含早餐 <em>Seaview Double Room</em></span><span class="ch-pricing__price">RM 1,490</span></div>
-              <div class="ch-pricing__row"><span>海景单人房 含早餐 <em>Seaview Single Room</em></span><span class="ch-pricing__price">RM 1,770</span></div>
-            </div>
-            <div class="ch-pricing__foot">
-              <p class="ch-pricing__footnote" data-i18n="pricing.footnote">Includes PADI materials, equipment, instructor fees, boat transfers &amp; certification.</p>
-              <a href="#book" class="btn btn--primary" style="width:100%;" data-i18n="pricing.dive">Dive Now</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Chapter 03 — Rescue Diver & EFR (right card, with pricing) -->
-        <div class="ch-row ch-row--right ch-row--pricing">
-          <div class="ch-pricing">
-            <button class="ch-pricing__close" aria-label="Close pricing">
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 2l12 12M14 2L2 14"/></svg>
-            </button>
-            <h3 class="ch-pricing__title" data-i18n="pricing.pricing">Pricing &amp; Packages</h3>
-            <p class="ch-pricing__note" data-i18n="pricing.note">* Price per person 每人价格</p>
-            <div class="ch-pricing__list">
-              <div class="ch-pricing__row"><span>自行安排住宿 <em>W/O Accommodation</em></span><span class="ch-pricing__price">RM 1,590</span></div>
-              <div class="ch-pricing__row"><span>单人房 <em>Standard Single Room</em></span><span class="ch-pricing__price">RM 1,960</span></div>
-              <div class="ch-pricing__row"><span>双人房 <em>Standard Twin Room</em></span><span class="ch-pricing__price">RM 1,760</span></div>
-              <div class="ch-pricing__row"><span>三人房 <em>Standard Triple Room</em></span><span class="ch-pricing__price">RM 1,720</span></div>
-              <div class="ch-pricing__row"><span>四人房 <em>Standard Quad Room</em></span><span class="ch-pricing__price">RM 1,690</span></div>
-              <div class="ch-pricing__row"><span>6 人床位（混性别）含早餐 <em>6 Bed Mixed Dorm</em></span><span class="ch-pricing__price">RM 1,690</span></div>
-              <div class="ch-pricing__row"><span>海景双人房 含早餐 <em>Seaview Double Room</em></span><span class="ch-pricing__price">RM 1,870</span></div>
-              <div class="ch-pricing__row"><span>海景单人房 含早餐 <em>Seaview Single Room</em></span><span class="ch-pricing__price">RM 2,170</span></div>
-            </div>
-            <div class="ch-pricing__foot">
-              <p class="ch-pricing__footnote" data-i18n="pricing.footnote">Includes PADI materials, equipment, instructor fees, boat transfers &amp; certification.</p>
-              <a href="#book" class="btn btn--primary" style="width:100%;" data-i18n="pricing.dive">Dive Now</a>
-            </div>
-          </div>
-          <div class="ch-dot-wrap" data-anim="zoomIn" data-delay="0">
-            <div class="ch-dot"></div>
-            <span class="ch-dot-num">03</span>
-          </div>
-          <div class="ch-card" data-anim="fadeInRight" data-delay="0">
-            <p class="ch-card__chapter" data-anim="fadeInUp" data-delay="80">Chapter Three</p>
-            <h3 class="ch-card__title" data-anim="fadeInUp" data-delay="150">RESCUE<br>DIVER &amp; EFR</h3>
-            <p data-i18n="ch3.script" class="ch-card__script" data-anim="fadeInUp" data-delay="220">Lead Others to Safety</p>
-            <p data-i18n="ch3.body" class="ch-card__body" data-anim="fadeInUp" data-delay="290">Become the diver others rely on. Accident prevention, self-rescue, and emergency management.</p>
-            <div class="ch-card__rule" data-anim="fadeIn" data-delay="350"></div>
-            <div class="ch-card__foot" data-anim="fadeInUp" data-delay="400">
-              <button class="ch-show-pricing" data-toggle-pricing data-i18n="pricing.toggle">Pricing ▸</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Chapter 04 — Fun Dive Packages (left card, with pricing) -->
-        <div class="ch-row ch-row--left ch-row--pricing">
-          <div class="ch-card" data-anim="fadeInLeft" data-delay="0">
-            <p class="ch-card__chapter" data-anim="fadeInUp" data-delay="80">Chapter Four</p>
-            <h3 class="ch-card__title" data-anim="fadeInUp" data-delay="150">FUN DIVE<br>PACKAGES</h3>
-            <p data-i18n="ch4.script" class="ch-card__script" data-anim="fadeInUp" data-delay="220">Explore Freely</p>
-            <p data-i18n="ch4.body" class="ch-card__body" data-anim="fadeInUp" data-delay="290">Already certified? Join guided dives across Tioman's 20+ sites. Equipment included. New depths every dive.</p>
-            <div class="ch-card__rule" data-anim="fadeIn" data-delay="350"></div>
-            <div class="ch-card__foot" data-anim="fadeInUp" data-delay="400">
-              <div class="ch-card__tabs">
-                <button class="ch-card__tab active" data-pricing="3d2n" data-i18n="ch4.tab1">3D2N 4 Dives</button>
-                <button class="ch-card__tab" data-pricing="4d3n" data-i18n="ch4.tab2">4D3N 6 Dives</button>
-              </div>
-              <button class="ch-show-pricing" data-toggle-pricing data-i18n="pricing.toggle">Pricing ▸</button>
-            </div>
-          </div>
-          <div class="ch-dot-wrap" data-anim="zoomIn" data-delay="0">
-            <span class="ch-dot-num">04</span>
-            <div class="ch-dot"></div>
-          </div>
-          <div class="ch-pricing ch-pricing--fun">
-            <button class="ch-pricing__close" aria-label="Close pricing">
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 2l12 12M14 2L2 14"/></svg>
-            </button>
-            <div class="ch-pricing__list ch-pricing__list--gear ch-pricing__data" data-pkg="3d2n">
-              <div class="ch-pricing__row ch-pricing__row--head"><span>3D2N 4 Dives — Price per person /RM 每人价格</span><span>OWN GEAR</span><span>OWN MASK<br>&amp; FINS</span><span>FULL<br>RENTAL</span></div>
-
-              <p class="ch-pricing__sub">W/O Accommodation 自行安排住宿</p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">400</span><span class="ch-pricing__price">500</span><span class="ch-pricing__price">520</span></div>
-
-              <p class="ch-pricing__sub">单人房 <em>Standard Single Room</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">800</span><span class="ch-pricing__price">900</span><span class="ch-pricing__price">920</span></div>
-
-              <p class="ch-pricing__sub">双人房 <em>Standard Twin Room</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">600</span><span class="ch-pricing__price">700</span><span class="ch-pricing__price">720</span></div>
-
-              <p class="ch-pricing__sub">三人房 <em>Standard Triple Room</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">550</span><span class="ch-pricing__price">650</span><span class="ch-pricing__price">670</span></div>
-
-              <p class="ch-pricing__sub">四人房 <em>Standard Quad Room</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">510</span><span class="ch-pricing__price">610</span><span class="ch-pricing__price">630</span></div>
-
-              <p class="ch-pricing__sub">6 人床位（混性别）含早餐 <em>6 Bed Mixed Dorm</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">520</span><span class="ch-pricing__price">620</span><span class="ch-pricing__price">640</span></div>
-
-              <p class="ch-pricing__sub">海景双人房 含早餐 <em>Seaview Double</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">700</span><span class="ch-pricing__price">800</span><span class="ch-pricing__price">820</span></div>
-
-              <p class="ch-pricing__sub">海景单人房 含早餐 <em>Seaview Single</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">980</span><span class="ch-pricing__price">1,080</span><span class="ch-pricing__price">1,100</span></div>
-            </div>
-
-            <div class="ch-pricing__list ch-pricing__list--gear ch-pricing__data" data-pkg="4d3n" style="display:none">
-              <div class="ch-pricing__row ch-pricing__row--head"><span>4D3N 6 Dives — Price per person /RM 每人价格</span><span>OWN GEAR</span><span>OWN MASK<br>&amp; FINS</span><span>FULL<br>RENTAL</span></div>
-
-              <p class="ch-pricing__sub">W/O Accommodation 自行安排住宿</p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">590</span><span class="ch-pricing__price">740</span><span class="ch-pricing__price">770</span></div>
-
-              <p class="ch-pricing__sub">单人房 <em>Standard Single Room</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">1,190</span><span class="ch-pricing__price">1,340</span><span class="ch-pricing__price">1,370</span></div>
-
-              <p class="ch-pricing__sub">双人房 <em>Standard Twin Room</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">880</span><span class="ch-pricing__price">1,030</span><span class="ch-pricing__price">1,060</span></div>
-
-              <p class="ch-pricing__sub">三人房 <em>Standard Triple Room</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">820</span><span class="ch-pricing__price">970</span><span class="ch-pricing__price">1,000</span></div>
-
-              <p class="ch-pricing__sub">四人房 <em>Standard Quad Room</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">760</span><span class="ch-pricing__price">910</span><span class="ch-pricing__price">940</span></div>
-
-              <p class="ch-pricing__sub">6 人床位（混性别）含早餐 <em>6 Bed Mixed Dorm</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">770</span><span class="ch-pricing__price">920</span><span class="ch-pricing__price">950</span></div>
-
-              <p class="ch-pricing__sub">海景双人房 含早餐 <em>Seaview Double</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">1,050</span><span class="ch-pricing__price">1,200</span><span class="ch-pricing__price">1,230</span></div>
-
-              <p class="ch-pricing__sub">海景单人房 含早餐 <em>Seaview Single</em></p>
-              <div class="ch-pricing__row ch-pricing__row--gear"><span></span><span class="ch-pricing__price">1,470</span><span class="ch-pricing__price">1,620</span><span class="ch-pricing__price">1,650</span></div>
-            </div>
-            <div class="ch-pricing__foot">
-              <p class="ch-pricing__footnote" data-i18n="pricing.footnote">Equipment rental included per package option above. Boat transfers &amp; guide included.</p>
-              <a href="#book" class="btn btn--primary" style="width:100%;" data-i18n="pricing.dive">Dive Now</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Chapter 05 — Freediver Course (right card, with pricing) -->
-        <div class="ch-row ch-row--right ch-row--pricing" id="ch-row-05">
-          <div class="ch-pricing">
-            <button class="ch-pricing__close" aria-label="Close pricing">
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 2l12 12M14 2L2 14"/></svg>
-            </button>
-            <h3 class="ch-pricing__title" data-i18n="pricing.pricing">Pricing &amp; Packages</h3>
-            <p class="ch-pricing__note" data-i18n="pricing.note">* 4D3N — Price per person 每人价格</p>
-
-            <div class="ch-pricing__list ch-pricing__data" data-pkg="freediver">
-              <div class="ch-pricing__row"><span>自行安排住宿 <em>W/O Accommodation</em></span><span class="ch-pricing__price">RM 1,490</span></div>
-              <div class="ch-pricing__row"><span>单人房 <em>Standard Single Room</em></span><span class="ch-pricing__price">RM 1,990</span></div>
-              <div class="ch-pricing__row"><span>双人房 <em>Standard Twin Room</em></span><span class="ch-pricing__price">RM 1,690</span></div>
-              <div class="ch-pricing__row"><span>三人房 <em>Standard Triple Room</em></span><span class="ch-pricing__price">RM 1,660</span></div>
-              <div class="ch-pricing__row"><span>四人房 <em>Standard Quad Room</em></span><span class="ch-pricing__price">RM 1,630</span></div>
-              <div class="ch-pricing__row"><span>6 人床位（混性别）含早餐 <em>6 Bed Mixed Dorm</em></span><span class="ch-pricing__price">RM 1,620</span></div>
-              <div class="ch-pricing__row"><span>海景双人房 含早餐 <em>Seaview Double Room</em></span><span class="ch-pricing__price">RM 1,930</span></div>
-              <div class="ch-pricing__row"><span>海景单人房 含早餐 <em>Seaview Single Room</em></span><span class="ch-pricing__price">RM 2,370</span></div>
-            </div>
-
-            <div class="ch-pricing__list ch-pricing__data" data-pkg="advanced" style="display:none">
-              <div class="ch-pricing__row"><span>自行安排住宿 <em>W/O Accommodation</em></span><span class="ch-pricing__price">RM 1,690</span></div>
-              <div class="ch-pricing__row"><span>单人房 <em>Standard Single Room</em></span><span class="ch-pricing__price">RM 2,190</span></div>
-              <div class="ch-pricing__row"><span>双人房 <em>Standard Twin Room</em></span><span class="ch-pricing__price">RM 1,890</span></div>
-              <div class="ch-pricing__row"><span>三人房 <em>Standard Triple Room</em></span><span class="ch-pricing__price">RM 1,860</span></div>
-              <div class="ch-pricing__row"><span>四人房 <em>Standard Quad Room</em></span><span class="ch-pricing__price">RM 1,830</span></div>
-              <div class="ch-pricing__row"><span>6 人床位（混性别）含早餐 <em>6 Bed Mixed Dorm</em></span><span class="ch-pricing__price">RM 1,820</span></div>
-              <div class="ch-pricing__row"><span>海景双人房 含早餐 <em>Seaview Double Room</em></span><span class="ch-pricing__price">RM 2,130</span></div>
-              <div class="ch-pricing__row"><span>海景单人房 含早餐 <em>Seaview Single Room</em></span><span class="ch-pricing__price">RM 2,570</span></div>
-            </div>
-
-            <div class="ch-pricing__foot">
-              <p class="ch-pricing__footnote" data-i18n="pricing.footnote">Includes PADI materials, equipment, instructor fees, boat transfers &amp; certification.</p>
-              <a href="#book" class="btn btn--primary" style="width:100%;" data-i18n="pricing.dive">Dive Now</a>
-            </div>
-          </div>
-          <div class="ch-dot-wrap" data-anim="zoomIn" data-delay="0">
-            <div class="ch-dot"></div>
-            <span class="ch-dot-num">05</span>
-          </div>
-          <div class="ch-card" data-anim="fadeInRight" data-delay="0">
-            <p class="ch-card__chapter" data-anim="fadeInUp" data-delay="80">Chapter Five</p>
-            <h3 class="ch-card__title ch5-title" data-anim="fadeInUp" data-delay="150">FREEDIVER<br>COURSE</h3>
-            <p data-i18n="ch5.script" class="ch-card__script" data-anim="fadeInUp" data-delay="220">One Breath. One World.</p>
-            <p class="ch-card__body ch5-body" data-anim="fadeInUp" data-delay="290">Discover the art of breath-hold diving. Silence, control, and the freedom to explore without bubbles.</p>
-            <div class="ch-card__rule" data-anim="fadeIn" data-delay="350"></div>
-            <div class="ch-card__foot" data-anim="fadeInUp" data-delay="400">
-              <div class="ch-card__tabs">
-                <button class="ch-card__tab active" data-course="freediver" data-i18n="ch5.freediver">Freediver</button>
-                <button class="ch-card__tab" data-course="advanced" data-i18n="ch5.advanced">Advanced Freediver</button>
-              </div>
-              <button class="ch-show-pricing" data-toggle-pricing data-i18n="pricing.toggle">Pricing ▸</button>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /ch-spine-wrap -->
-    </div><!-- /ch-layout -->
-  </div>
-  <!-- Progress counter -->
-  <div class="ch-scroll-progress">
-    <span class="ch-scroll-current">01</span>
-    <span class="ch-scroll-sep"> / </span>
-    <span class="ch-scroll-total">05</span>
+    <p data-i18n="courses.eyebrow" class="pin-intro__kicker">Our Programs</p>
+    <h2 data-i18n="courses.title" data-i18n-html class="pin-intro__title">A JOURNEY<br>THAT UNFOLDS<br>IN <em>DEPTHS</em></h2>
+    <p data-i18n="courses.body" class="pin-intro__body">Every diver's path is unique. From your very first breath underwater to mastery of the deep — each program is a chapter in your story.</p>
   </div>
 </section>
+
+<div class="pin-wrap" id="pin-wrap">
+  <div class="pin-progress-dots" id="pin-dots" aria-hidden="true"></div>
+
+  <div class="pin-scene" id="pin-scene">
+    <div class="pin-chapters" id="pin-chapters">
+      <button type="button" class="pin-chapter active" data-i="0">
+        <span class="pin-chapter__num">01</span>
+        <span class="pin-chapter__title">Open Water <em>Diver</em></span>
+        <span class="pin-chapter__desc" data-i18n="ch1.body">The world's most popular certification. 3–4 days of theory, confined water and 4 open water dives to 18m.</span>
+        <span class="pin-chapter__arrow" aria-hidden="true">→</span>
+      </button>
+      <button type="button" class="pin-chapter" data-i="1">
+        <span class="pin-chapter__num">02</span>
+        <span class="pin-chapter__title">Advanced <em>Open Water</em></span>
+        <span class="pin-chapter__desc" data-i18n="ch2.body">Five adventure dives including deep diving to 30m, navigation, and underwater photography.</span>
+        <span class="pin-chapter__arrow" aria-hidden="true">→</span>
+      </button>
+      <button type="button" class="pin-chapter" data-i="2">
+        <span class="pin-chapter__num">03</span>
+        <span class="pin-chapter__title">Rescue Diver <em>&amp; EFR</em></span>
+        <span class="pin-chapter__desc" data-i18n="ch3.body">Become the diver others rely on. Accident prevention, self-rescue, and emergency management.</span>
+        <span class="pin-chapter__arrow" aria-hidden="true">→</span>
+      </button>
+      <button type="button" class="pin-chapter" data-i="3">
+        <span class="pin-chapter__num">04</span>
+        <span class="pin-chapter__title">Fun Dive <em>Packages</em></span>
+        <span class="pin-chapter__desc" data-i18n="ch4.body">Already certified? Join guided dives across Tioman's 20+ sites. Equipment included.</span>
+        <span class="pin-chapter__arrow" aria-hidden="true">→</span>
+      </button>
+      <button type="button" class="pin-chapter" data-i="4">
+        <span class="pin-chapter__num">05</span>
+        <span class="pin-chapter__title">Freediver <em>Course</em></span>
+        <span class="pin-chapter__desc">Discover the art of breath-hold diving. Silence, control, and freedom without bubbles.</span>
+        <span class="pin-chapter__arrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+
+    <div class="pin-panels" id="pin-panels">
+      <div class="pin-bar"><div class="pin-bar__fill" id="pin-bar-fill"></div></div>
+
+      <!-- Panel 01 OW -->
+      <div class="pin-panel visible" data-i="0">
+        <div class="pin-card">
+          <span class="pin-card__tag">Certify</span>
+          <h3 class="pin-card__title">Open Water Diver</h3>
+          <p class="pin-card__script" data-i18n="ch1.script">The World Opens Up</p>
+          <p class="pin-card__body" data-i18n="ch1.body">The world's most popular certification. 3–4 days of theory, confined water and 4 open water dives to 18m.</p>
+          <ul class="pin-card__items">
+            <li>Theory + confined water</li>
+            <li>4 open water dives to 18m</li>
+            <li>PADI materials &amp; gear</li>
+            <li>From RM 1,350 / person</li>
+          </ul>
+          <div class="pin-card__prices">
+            <div><span>W/O Accommodation</span><strong>RM 1,350</strong></div>
+            <div><span>Twin Room</span><strong>RM 1,630</strong></div>
+            <div><span>Seaview Double</span><strong>RM 1,750</strong></div>
+            <div><span>Seaview Single</span><strong>RM 2,170</strong></div>
+          </div>
+          <a href="#book" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive">Dive Now</a>
+        </div>
+        <div class="pin-badge pin-badge--tr"><span>3–4</span><small>Days</small></div>
+        <div class="pin-badge pin-badge--bl"><span>18m</span><small>Max depth</small></div>
+      </div>
+
+      <!-- Panel 02 AOW -->
+      <div class="pin-panel" data-i="1">
+        <div class="pin-card">
+          <span class="pin-card__tag">Advance</span>
+          <h3 class="pin-card__title">Advanced Open Water</h3>
+          <p class="pin-card__script" data-i18n="ch2.script">Go Deeper</p>
+          <p class="pin-card__body" data-i18n="ch2.body">Five adventure dives including deep diving to 30m, navigation, and underwater photography.</p>
+          <ul class="pin-card__items">
+            <li>5 adventure dives</li>
+            <li>Deep dive to 30m</li>
+            <li>Navigation &amp; specialties</li>
+            <li>From RM 1,180 / person</li>
+          </ul>
+          <div class="pin-card__prices">
+            <div><span>W/O Accommodation</span><strong>RM 1,180</strong></div>
+            <div><span>Twin Room</span><strong>RM 1,380</strong></div>
+            <div><span>Seaview Double</span><strong>RM 1,490</strong></div>
+            <div><span>Seaview Single</span><strong>RM 1,770</strong></div>
+          </div>
+          <a href="#book" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive">Dive Now</a>
+        </div>
+        <div class="pin-badge pin-badge--tr"><span>30m</span><small>Deep dive</small></div>
+        <div class="pin-badge pin-badge--bl"><span>5</span><small>Adventure dives</small></div>
+      </div>
+
+      <!-- Panel 03 Rescue -->
+      <div class="pin-panel" data-i="2">
+        <div class="pin-card">
+          <span class="pin-card__tag">Rescue</span>
+          <h3 class="pin-card__title">Rescue Diver &amp; EFR</h3>
+          <p class="pin-card__script" data-i18n="ch3.script">Lead Others to Safety</p>
+          <p class="pin-card__body" data-i18n="ch3.body">Become the diver others rely on. Accident prevention, self-rescue, and emergency management.</p>
+          <ul class="pin-card__items">
+            <li>Self-rescue skills</li>
+            <li>Emergency First Response</li>
+            <li>Accident prevention</li>
+            <li>From RM 1,590 / person</li>
+          </ul>
+          <div class="pin-card__prices">
+            <div><span>W/O Accommodation</span><strong>RM 1,590</strong></div>
+            <div><span>Twin Room</span><strong>RM 1,760</strong></div>
+            <div><span>Seaview Double</span><strong>RM 1,870</strong></div>
+            <div><span>Seaview Single</span><strong>RM 2,170</strong></div>
+          </div>
+          <a href="#book" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive">Dive Now</a>
+        </div>
+        <div class="pin-badge pin-badge--tr"><span>EFR</span><small>Included</small></div>
+        <div class="pin-badge pin-badge--bl"><span>PADI</span><small>Rescue Diver</small></div>
+      </div>
+
+      <!-- Panel 04 Fun Dive -->
+      <div class="pin-panel" data-i="3">
+        <div class="pin-card">
+          <span class="pin-card__tag">Fun Dive</span>
+          <h3 class="pin-card__title">Fun Dive Packages</h3>
+          <p class="pin-card__script" data-i18n="ch4.script">Explore Freely</p>
+          <p class="pin-card__body" data-i18n="ch4.body">Already certified? Join guided dives across Tioman's 20+ sites. Equipment included. New depths every dive.</p>
+          <ul class="pin-card__items">
+            <li>3D2N · 4 dives from RM 400</li>
+            <li>4D3N · 6 dives from RM 590</li>
+            <li>Own gear / partial / full rental</li>
+            <li>Boat transfers &amp; guide</li>
+          </ul>
+          <div class="pin-card__prices">
+            <div><span>3D2N W/O Acc. (own gear)</span><strong>RM 400</strong></div>
+            <div><span>3D2N Twin (full rental)</span><strong>RM 720</strong></div>
+            <div><span>4D3N W/O Acc. (own gear)</span><strong>RM 590</strong></div>
+            <div><span>4D3N Twin (full rental)</span><strong>RM 1,060</strong></div>
+          </div>
+          <a href="#book" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive">Dive Now</a>
+        </div>
+        <div class="pin-badge pin-badge--tr"><span>20+</span><small>Dive sites</small></div>
+        <div class="pin-badge pin-badge--bl"><span>4–6</span><small>Dives / trip</small></div>
+      </div>
+
+      <!-- Panel 05 Freediver -->
+      <div class="pin-panel" data-i="4">
+        <div class="pin-card">
+          <span class="pin-card__tag">Freedive</span>
+          <h3 class="pin-card__title">Freediver Course</h3>
+          <p class="pin-card__script" data-i18n="ch5.script">One Breath. One World.</p>
+          <p class="pin-card__body">Discover the art of breath-hold diving. Silence, control, and the freedom to explore without bubbles.</p>
+          <ul class="pin-card__items">
+            <li>Freediver — from RM 1,490</li>
+            <li>Advanced Freediver — from RM 1,690</li>
+            <li>4D3N packages with rooms</li>
+            <li>Breath-hold fundamentals</li>
+          </ul>
+          <div class="pin-card__prices">
+            <div><span>Freediver W/O Acc.</span><strong>RM 1,490</strong></div>
+            <div><span>Freediver Twin</span><strong>RM 1,690</strong></div>
+            <div><span>Adv. Freediver W/O Acc.</span><strong>RM 1,690</strong></div>
+            <div><span>Adv. Freediver Twin</span><strong>RM 1,890</strong></div>
+          </div>
+          <a href="#book" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive">Dive Now</a>
+        </div>
+        <div class="pin-badge pin-badge--tr"><span>1</span><small>Breath</small></div>
+        <div class="pin-badge pin-badge--bl"><span>4D3N</span><small>Packages</small></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -1104,17 +991,14 @@ document.querySelectorAll('.kh-curtain-panel').forEach(panel => {
   });
 });
 
-/* Smooth scroll — with pinned section support */
+/* Smooth scroll — with pin section support */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
     const href = a.getAttribute('href');
-    // For Courses button: use ch-scroll-container top (handles GSAP pin offset)
     if (href === '#courses') {
-      const container = document.querySelector('.ch-scroll-container');
-      if (container) {
-        window.scrollTo({ top: container.offsetTop - 80, behavior: 'smooth' });
-      }
+      const target = document.getElementById('courses');
+      if (target) window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
       return;
     }
     const t = document.querySelector(href);
@@ -1122,58 +1006,88 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ── Sticky scroll for Our Programs ── */
-(function initCourseScroll() {
-  const container = document.querySelector('.ch-scroll-container');
-  const section   = document.querySelector('.ch-section');
-  const spineWrap = document.querySelector('.ch-spine-wrap');
-  const rows      = [...document.querySelectorAll('.ch-row')];
-  const currentEl = document.querySelector('.ch-scroll-current');
-  if (!container || !spineWrap) return;
-  const totalRows = rows.length;
-  // Dynamically set scroll container height: ~100vh per row
-  const scrollHeight = Math.max(totalRows * 100, 400);
-  container.style.height = scrollHeight + 'vh';
-  const getScrollDist = () => Math.max(0, spineWrap.scrollHeight - window.innerHeight * 0.72);
-  ScrollTrigger.create({
-    trigger: container,
-    start: 'top top',
-    end: 'bottom bottom',
-    pin: section,
-    anticipatePin: 1,
+/* ── Pin chapters — Our Programs ── */
+(function initPinChapters() {
+  const wrapEl = document.getElementById('pin-wrap');
+  const dotsEl = document.getElementById('pin-dots');
+  const fillEl = document.getElementById('pin-bar-fill');
+  const chapters = [...document.querySelectorAll('.pin-chapter')];
+  const panels = [...document.querySelectorAll('.pin-panel')];
+  if (!wrapEl || !chapters.length) return;
+
+  const N = chapters.length;
+  const SCREENS_PER = 1.35;
+  let currentIndex = 0;
+  let desktop = window.matchMedia('(min-width: 900px)').matches;
+
+  function setHeight() {
+    desktop = window.matchMedia('(min-width: 900px)').matches;
+    wrapEl.style.height = desktop ? (N * SCREENS_PER * 100) + 'vh' : 'auto';
+  }
+  setHeight();
+
+  // progress dots
+  chapters.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'pin-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Chapter ' + String(i + 1).padStart(2, '0'));
+    dot.addEventListener('click', () => scrollToChapter(i));
+    dotsEl.appendChild(dot);
   });
-  gsap.to(spineWrap, {
-    y: () => -getScrollDist(),
-    ease: 'none',
-    scrollTrigger: {
-      trigger: container,
+
+  function setActive(i) {
+    if (i === currentIndex) return;
+    currentIndex = i;
+    chapters.forEach((el, idx) => el.classList.toggle('active', idx === i));
+    panels.forEach((el, idx) => el.classList.toggle('visible', idx === i));
+    dotsEl.querySelectorAll('.pin-dot').forEach((el, idx) => el.classList.toggle('active', idx === i));
+    if (fillEl) fillEl.style.width = ((i + 1) / N * 100) + '%';
+  }
+
+  function scrollToChapter(i) {
+    if (!desktop) {
+      setActive(i);
+      const panel = panels[i];
+      if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      return;
+    }
+    const wrapTop = window.scrollY + wrapEl.getBoundingClientRect().top;
+    const target = wrapTop + (i / N) * wrapEl.offsetHeight + 8;
+    window.scrollTo({ top: target, behavior: 'smooth' });
+  }
+
+  chapters.forEach((ch, i) => ch.addEventListener('click', () => scrollToChapter(i)));
+
+  let st;
+  function bindScroll() {
+    if (st) { st.kill(); st = null; }
+    setHeight();
+    if (!desktop) {
+      setActive(0);
+      if (fillEl) fillEl.style.width = '100%';
+      return;
+    }
+    st = ScrollTrigger.create({
+      trigger: wrapEl,
       start: 'top top',
       end: 'bottom bottom',
-      scrub: 1.4,
-      invalidateOnRefresh: true,
-    },
-  });
-  rows.forEach((row, i) => {
-    const startPct = (i / totalRows) * 100;
-    ScrollTrigger.create({
-      trigger: container,
-      start: 'top+=' + startPct + '% top',
-      onEnter: () => {
-        row.classList.add('revealed');
-        // On mobile: hide heading when first card appears
-        if (i === 0 && window.innerWidth < 768) {
-          gsap.to('.ch-anchor', { opacity: 0, duration: 0.5, ease: 'power2.out', height: 0, margin: 0, padding: 0, overflow: 'hidden' });
-        }
-        if (currentEl) currentEl.textContent = String(i + 1).padStart(2, '0');
-      },
-      onLeaveBack: () => {
-        row.classList.remove('revealed');
-        if (i === 0 && window.innerWidth < 768) {
-          gsap.to('.ch-anchor', { opacity: 1, height: 'auto', margin: '', padding: '', overflow: '', duration: 0.4, ease: 'power2.in', clearProps: 'height,margin,padding,overflow' });
-        }
-        if (currentEl) currentEl.textContent = String(Math.max(1, i)).padStart(2, '0');
-      },
+      onUpdate: self => {
+        const index = Math.min(N - 1, Math.floor(self.progress * N));
+        setActive(index);
+      }
     });
+    setActive(0);
+    if (fillEl) fillEl.style.width = (1 / N * 100) + '%';
+  }
+
+  bindScroll();
+  window.addEventListener('resize', () => {
+    clearTimeout(window.__pinResize);
+    window.__pinResize = setTimeout(() => {
+      ScrollTrigger.refresh();
+      bindScroll();
+    }, 150);
   });
 })();
 
@@ -1201,126 +1115,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     // ⑥ Entire overlay fades out
     .to(overlay, { opacity: 0, duration: 0.8, ease: 'power2.inOut', onComplete: () => { overlay.remove(); } }, '+=1.5');
 })();
-
-/* ── Pricing card: close + prevent hover lock ── */
-document.querySelectorAll('.ch-pricing__close').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    btn.closest('.ch-pricing').style.opacity = '0';
-    btn.closest('.ch-pricing').style.pointerEvents = 'none';
-  });
-});
-/* Re-enable on mouse leave the row */
-document.querySelectorAll('.ch-row--pricing').forEach(row => {
-  row.addEventListener('mouseleave', () => {
-    const p = row.querySelector('.ch-pricing');
-    if (p) { p.style.opacity = ''; p.style.pointerEvents = ''; }
-  });
-});
-
-/* ── Fun dive package toggle ── */
-(function() {
-  const tabs = document.querySelectorAll('.ch-card__tab');
-  if (!tabs.length) return;
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const pkg = tab.dataset.pricing;
-      if (!pkg) return; // Skip Ch5 tabs (use data-course)
-      const parent = tab.closest('.ch-row--pricing');
-      if (!parent) return;
-      // Update tab active state
-      parent.querySelectorAll('.ch-card__tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      // Toggle pricing data
-      parent.querySelectorAll('.ch-pricing__data').forEach(d => {
-        d.style.display = d.dataset.pkg === pkg ? '' : 'none';
-      });
-      // Force-open pricing on mobile
-      const pricing = parent.querySelector('.ch-pricing');
-      const toggleBtn = parent.querySelector('[data-toggle-pricing]');
-      if (pricing && !pricing.classList.contains('open')) {
-        pricing.classList.add('open');
-        if (toggleBtn) toggleBtn.textContent = 'Pricing ▾';
-      }
-    });
-  });
-})();
-
-/* ── Freediver course toggle (title + pricing) ── */
-(function() {
-  const row = document.getElementById('ch-row-05');
-  if (!row) return;
-  const titleEl = row.querySelector('.ch5-title');
-  const bodyEl = row.querySelector('.ch5-body');
-  const scriptEl = row.querySelector('.ch-card__script');
-  const courseData = {
-    freediver: {
-      title: 'FREEDIVER<br>COURSE',
-      script: 'One Breath. One World.',
-      body: 'Discover the art of breath-hold diving. Silence, control, and the freedom to explore without bubbles.'
-    },
-    advanced: {
-      title: 'ADVANCED<br>FREEDIVER',
-      script: 'Deeper & Longer',
-      body: 'Push your limits. Static and dynamic apnea, free immersion, and deeper breath-hold techniques down to 20m+.'
-    }
-  };
-  row.querySelectorAll('[data-course]').forEach(tab => {
-    tab.addEventListener('click', () => {
-      row.querySelectorAll('[data-course]').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const course = tab.dataset.course;
-      const data = courseData[course];
-      if (data) {
-        titleEl.innerHTML = data.title;
-        if (scriptEl) scriptEl.textContent = data.script;
-        if (bodyEl) bodyEl.textContent = data.body;
-      }
-      // Toggle pricing — show selected, hide others
-      row.querySelectorAll('.ch-pricing__data').forEach(d => {
-        if (d.dataset.pkg === course) {
-          d.style.display = '';
-        } else {
-          d.style.display = 'none';
-        }
-      });
-      // Force-open pricing on mobile
-      const pricing = row.querySelector('.ch-pricing');
-      const toggleBtn = row.querySelector('[data-toggle-pricing]');
-      if (pricing && !pricing.classList.contains('open')) {
-        pricing.classList.add('open');
-        if (toggleBtn) toggleBtn.textContent = 'Pricing ▾';
-      }
-    });
-  });
-})();
-
-/* ── Mobile pricing toggle ── */
-document.querySelectorAll('[data-toggle-pricing]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const row = btn.closest('.ch-row--pricing');
-    if (!row) return;
-    const pricing = row.querySelector('.ch-pricing');
-    if (!pricing) return;
-    pricing.classList.toggle('open');
-    btn.textContent = pricing.classList.contains('open') ? 'Pricing ▾' : 'Pricing ▸';
-  });
-});
-/* On mobile, tab clicks also open pricing */
-document.querySelectorAll('.ch-card__tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    if (window.innerWidth < 768) {
-      const row = tab.closest('.ch-row--pricing');
-      if (!row) return;
-      const pricing = row.querySelector('.ch-pricing');
-      const toggleBtn = row.querySelector('[data-toggle-pricing]');
-      if (pricing && !pricing.classList.contains('open')) {
-        pricing.classList.add('open');
-        if (toggleBtn) toggleBtn.textContent = 'Pricing ▾';
-      }
-    }
-  });
-});
 
 /* ── Internationalisation ── */
 (function() {
