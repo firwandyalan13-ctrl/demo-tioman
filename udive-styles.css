@@ -1314,7 +1314,8 @@ ul { list-style:none; }
   align-items: center;
   gap: 10px;
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: oklch(92% 0.01 250 / 0.92);
+  text-shadow: 0 1px 10px oklch(0% 0 0 / 0.45);
 }
 .pin-card__items li::before {
   content: '';
@@ -1329,24 +1330,32 @@ ul { list-style:none; }
   grid-template-columns: 1fr 1fr;
   gap: var(--space-3);
   margin-bottom: var(--space-6);
-  padding-top: var(--space-5);
-  border-top: 1px solid var(--color-border);
+  padding: var(--space-4);
+  border-top: none;
+  border-radius: 10px;
+  background: oklch(4% 0.02 250 / 0.42);
+  border: 1px solid oklch(100% 0 0 / 0.08);
 }
 .pin-card__prices div {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
+  padding: var(--space-2) var(--space-1);
 }
 .pin-card__prices span {
   font-size: var(--text-xs);
-  color: var(--color-text-faint);
+  font-weight: 500;
+  line-height: 1.35;
+  color: oklch(90% 0.01 250 / 0.88);
 }
 .pin-card__prices strong {
-  font-family: var(--font-display);
-  font-size: var(--text-base);
-  font-weight: 500;
-  color: var(--color-accent);
+  font-family: var(--font-sans);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  font-weight: 700;
+  color: oklch(92% 0.14 35);
   font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 12px oklch(0% 0 0 / 0.65), 0 0 1px oklch(0% 0 0 / 0.8);
 }
 .pin-card__cta { width: 100%; justify-content: center; }
 
