@@ -264,13 +264,14 @@ ul { list-style:none; }
     transform: none;
     margin-top: 0;
     width: auto;
-    max-width: 100%;
-    font-size: 11px;
+    max-width: none;
+    font-size: clamp(9px, 2.7vw, 11px);
     font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: 0.12em;
+    line-height: 1;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     text-align: left;
+    white-space: nowrap;
     color: oklch(92% 0.01 250 / 0.92);
     text-shadow: 0 1px 12px oklch(0% 0 0 / 0.55);
   }
