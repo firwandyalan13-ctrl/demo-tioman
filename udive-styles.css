@@ -250,23 +250,24 @@ ul { list-style:none; }
   .hero__logo {
     position: absolute;
     top: calc(50% - 4.25rem);
-    left: calc(50% - 1.75rem);
-    transform: translateX(-50%);
+    left: var(--space-5);
+    transform: none;
     height: 44px;
     width: auto;
   }
   .hero__location {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: max-content;
-    max-width: calc(100% - var(--space-10));
+    left: var(--space-5);
+    right: 46%;
+    transform: translateY(-50%);
+    width: auto;
+    max-width: none;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     color: oklch(92% 0.01 250 / 0.92);
     text-shadow: 0 1px 12px oklch(0% 0 0 / 0.55);
   }
