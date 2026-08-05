@@ -250,7 +250,7 @@ ul { list-style:none; }
   .hero__logo {
     position: absolute;
     top: calc(50% - 4.25rem);
-    left: 50%;
+    left: calc(50% - 1.75rem);
     transform: translateX(-50%);
     height: 44px;
     width: auto;
