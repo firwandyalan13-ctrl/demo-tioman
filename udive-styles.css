@@ -235,7 +235,41 @@ ul { list-style:none; }
   letter-spacing: 0.03em;
 }
 @media (max-width: 767px) {
-  .hero__brand { display: none; }
+  .hero__brand {
+    display: block;
+    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: none;
+    z-index: 12;
+    pointer-events: none;
+  }
+  .hero__brand-divider { display: none; }
+  .hero__logo {
+    position: absolute;
+    top: calc(50% - 4.25rem);
+    left: 50%;
+    transform: translateX(-50%);
+    height: 44px;
+    width: auto;
+  }
+  .hero__location {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    max-width: calc(100% - var(--space-10));
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+    color: oklch(92% 0.01 250 / 0.92);
+    text-shadow: 0 1px 12px oklch(0% 0 0 / 0.55);
+  }
 }
 .hero__map-hover {
   position: absolute; left: var(--space-20); top: calc(var(--space-6) + 46px);
@@ -455,22 +489,7 @@ ul { list-style:none; }
   text-transform:uppercase; color:var(--color-text-faint);
   margin-bottom:var(--space-6); opacity:0; transform:translateY(20px);
 }
-@media (max-width: 767px) {
-  .hero__eyebrow {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-bottom: 0;
-    text-align: center;
-    width: max-content;
-    max-width: calc(100% - var(--space-10));
-    color: oklch(92% 0.01 250 / 0.92);
-    text-shadow: 0 1px 12px oklch(0% 0 0 / 0.55);
-    z-index: 11;
-  }
-}
+@media (max-width: 767px) { .hero__eyebrow { display: none; } }
 @media (min-width: 1024px) { .hero__eyebrow { display: none; } }
 .hero__title {
   font-family:var(--font-display); font-weight:400; line-height:1.05;
@@ -1531,8 +1550,8 @@ ul { list-style:none; }
     color: oklch(96% 0.01 250 / 0.95);
     text-shadow: 0 1px 10px oklch(0% 0 0 / 0.5);
   }
-  .hero__title { font-size: clamp(2rem, 8vw, 2.8rem); max-width: 90%; position: absolute; top: 32%; left: var(--space-5); right: var(--space-5); z-index: 11; }
-  .hero__script { position: absolute; top: 48%; left: var(--space-5); right: 42%; z-index: 11; }
+  .hero__title { font-size: clamp(2rem, 8vw, 2.8rem); max-width: 90%; position: absolute; top: 20%; left: var(--space-5); right: var(--space-5); z-index: 11; }
+  .hero__script { position: absolute; top: 64%; left: var(--space-5); right: 42%; z-index: 11; }
   .hero__subtitle { display: none; }
   .hero__content { padding: var(--space-24) var(--space-5) var(--space-20); }
 
