@@ -92,7 +92,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="udive-styles.css?v=12">
+  <link rel="stylesheet" href="udive-styles.css?v=13">
   <style>
     /* FOUT guard */
     body { opacity: 1; }
@@ -828,8 +828,11 @@ window.addEventListener('scroll', () => {
 
 /* ── Hero entrance (GSAP) ── */
 const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+const heroMobile = window.matchMedia('(max-width: 767px)').matches;
 heroTl
-  .to('#heroEyebrow', { opacity:1, y:0, duration:0.7, delay:0.2 })
+  .to('#heroEyebrow', heroMobile
+    ? { opacity:1, duration:0.7, delay:0.2 }
+    : { opacity:1, y:0, duration:0.7, delay:0.2 })
   .to('#heroTitle',   { opacity:1, y:0, duration:1.0 }, '-=0.4')
   .to('#heroScript',  { opacity:1, y:0, duration:0.7 }, '-=0.5')
   .to('#heroSubtitle',{ opacity:1, y:0, duration:0.8 }, '-=0.4')
