@@ -261,7 +261,7 @@ ul { list-style:none; }
   .hero__location {
     position: static;
     transform: none;
-    margin-top: var(--space-3);
+    margin-top: var(--space-1);
     width: auto;
     max-width: 100%;
     font-size: 11px;
