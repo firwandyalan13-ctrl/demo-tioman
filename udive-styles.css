@@ -948,7 +948,7 @@ ul { list-style:none; }
 .instagram__header { text-align:center; margin-bottom:var(--space-12); }
 .instagram__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-2); }
 @media (min-width:768px) { .instagram__grid { grid-template-columns:repeat(6,1fr); gap:var(--space-3); } }
-.instagram__item { position:relative; aspect-ratio:1; border-radius:4px; overflow:hidden; cursor:pointer; }
+.instagram__item { position:relative; aspect-ratio:1; border-radius:4px; overflow:hidden; cursor:pointer; display:block; color:inherit; text-decoration:none; }
 .instagram__item img { width:100%; height:100%; object-fit:cover; filter:saturate(0.75); transition:transform var(--dur-slow), filter var(--dur-slow); }
 .instagram__item:hover img { transform:scale(1.08); filter:saturate(1); }
 .instagram__item-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:oklch(4% 0.015 250 / 0.55); opacity:0; transition:opacity var(--dur-norm); color:var(--color-text); }
