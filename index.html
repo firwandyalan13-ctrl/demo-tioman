@@ -8,6 +8,7 @@
   <meta name="description" content="UDIVE Tioman — PADI 5 Star CDC in Paya Village, Tioman Island. PADI-certified dive courses, fun dives, freediving, and accommodation since 2010. Book your dive adventure.">
   <meta name="keywords" content="UDIVE Tioman, Tioman diving, PADI 5 Star CDC, scuba diving Malaysia, dive courses Tioman, PADI certification, fun diving, freediving Tioman, Seaview Chalet">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#050a10">
   <link rel="canonical" href="https://udive.com.my/">
 
   <!-- Open Graph -->
@@ -27,8 +28,8 @@
   <meta name="twitter:description" content="PADI-certified dive courses, fun dives, freediving, and seaside accommodation in Tioman Island, Malaysia.">
   <meta name="twitter:image" content="https://udive.com.my/udive.png">
 
-  <link rel="icon" href="udive.png" type="image/png">
-  <link rel="apple-touch-icon" href="udive.png">
+  <link rel="icon" href="apple-touch-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <!-- Structured Data — LocalBusiness -->
   <script type="application/ld+json">
@@ -161,18 +162,25 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="udive-styles.css?v=22">
-  <style>
-    /* FOUT guard */
-    body { opacity: 1; }
-  </style>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;1,400&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="udive.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="hero-bg-sm.webp" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="hero-bg.webp" media="(min-width: 768px)">
+  <link rel="stylesheet" href="udive-styles.css?v=26">
+  <script>
+    (function () {
+      try {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || sessionStorage.getItem('udive_intro') === '1') {
+          document.documentElement.classList.add('skip-intro');
+        }
+      } catch (err) {}
+    })();
+  </script>
+  <noscript><style>.intro-overlay{display:none!important}[data-anim]{opacity:1!important}.hero__title,.hero__script,.hero__ctas,.hero__subtitle,.hero__eyebrow{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- ═══════════════════════════════════════
      INTRO OVERLAY — logo reveal
@@ -180,9 +188,9 @@
 <div id="introOverlay" class="intro-overlay">
   <div class="intro-overlay__beam" id="introBeam"></div>
   <div class="intro-overlay__inner">
-    <img src="udive.png" alt="Udive" class="intro-overlay__logo" id="introLogo">
+    <img src="udive.webp" alt="Udive" class="intro-overlay__logo" id="introLogo" width="640" height="185">
     <div class="intro-overlay__divider"></div>
-    <img src="PADI.png" alt="PADI" class="intro-overlay__padi" id="introPadi">
+    <img src="padi-logo.webp" alt="PADI" class="intro-overlay__padi" id="introPadi" width="400" height="383">
   </div>
 </div>
 
@@ -192,21 +200,21 @@
 <nav class="nav" id="nav">
   <div class="nav__inner">
     <a href="#hero" class="nav__logo">
-      <img src="udive.png" alt="Udive">
+      <img src="udive.webp" alt="Udive" width="276" height="80">
     </a>
     <div class="nav__links">
-      <a href="#stay" class="nav__link" data-i18n="hero.stay">Stay</a>
-      <a href="#courses" class="nav__link" data-i18n="nav.courses">Courses</a>
-      <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
+      <a href="#stay" class="nav__link" data-section="stay" data-i18n="hero.stay">Stay</a>
+      <a href="#courses" class="nav__link" data-section="courses" data-i18n="nav.courses">Courses</a>
+      <a href="#contact" class="nav__link" data-section="contact" data-i18n="nav.contact">Contact</a>
     </div>
-    <div style="display:flex;align-items:center;gap:var(--space-6)">
+    <div class="nav__actions">
       <div class="nav__lang">
-        <button class="active" id="lang-en">EN</button>
-        <button id="lang-zh">中文</button>
+        <button type="button" class="active" id="lang-en">EN</button>
+        <button type="button" id="lang-zh">中文</button>
       </div>
-      <a href="#book" class="nav__cta" data-i18n="nav.book">Book Now</a>
+      <a href="https://wa.me/60122459883?text=Hi%2C%20I%20found%20UDIVE%20Tioman%20through%20your%20official%20website%20and%20would%20like%20to%20plan%20a%20Tioman%20dive%20trip.%20Could%20you%20assist%20me%3F" class="nav__cta" data-i18n="nav.book" target="_blank" rel="noopener">Book Now</a>
     </div>
-    <button class="nav__mobile-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav__mobile-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navDrawer"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -216,10 +224,10 @@
   <a href="#stay" class="nav__link" data-i18n="hero.stay">Stay</a>
   <a href="#courses" class="nav__link" data-i18n="nav.courses">Courses</a>
   <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
-  <a href="#book" class="btn btn--primary" style="align-self:flex-start;margin-top:var(--space-4)" data-i18n="nav.book">Book Now</a>
+  <a href="https://wa.me/60122459883?text=Hi%2C%20I%20found%20UDIVE%20Tioman%20through%20your%20official%20website%20and%20would%20like%20to%20plan%20a%20Tioman%20dive%20trip.%20Could%20you%20assist%20me%3F" class="btn btn--primary" style="align-self:flex-start;margin-top:var(--space-4)" data-i18n="nav.book" target="_blank" rel="noopener">Book Now</a>
   <div class="nav__lang">
-    <button class="active" data-lang="en">EN</button>
-    <button data-lang="zh">中文</button>
+    <button type="button" class="active" data-lang="en">EN</button>
+    <button type="button" data-lang="zh">中文</button>
   </div>
 </div>
 
@@ -230,27 +238,28 @@
   <canvas class="hero__canvas" id="particleCanvas"></canvas>
   <div class="hero__vignette"></div>
   <div class="hero__brand">
-    <img src="udive.png" alt="Udive" class="hero__logo">
+    <img src="udive.webp" alt="Udive" class="hero__logo" width="276" height="80" fetchpriority="high" decoding="async">
     <span class="hero__brand-divider"></span>
     <span class="hero__location" data-i18n="hero.eyebrow">Paya Village, Tioman Island</span>
   </div>
   <div class="hero__map-hover">
     <div class="hero__hover-top">
-      <img src="刁曼岛地图_移除黄色路径.png" alt="Tioman Map" class="hero__map-thumb" loading="lazy">
-      <img src="UDIVE航拍图_移除黄色箭头.png" alt="UDIVE Aerial" class="hero__map-hover-img" loading="lazy">
+      <img data-src="tioman-map.webp" alt="Tioman Map" class="hero__map-thumb" width="1400" height="1400" decoding="async">
+      <img data-src="udive-aerial.webp" alt="UDIVE Aerial" class="hero__map-hover-img" width="960" height="1200" decoding="async">
     </div>
     <div class="hero__photos-row">
-      <img src="1.png" alt="Diver exploring Tioman reef" class="hero__photo" loading="lazy">
-      <img src="2.png" alt="Coral garden at Tioman Island" class="hero__photo" loading="lazy">
-      <img src="3.png" alt="Turtle encounter in Tioman waters" class="hero__photo" loading="lazy">
+      <img data-src="dive-1.webp" alt="Diver exploring Tioman reef" class="hero__photo" width="718" height="524" decoding="async">
+      <img data-src="dive-2.webp" alt="Coral garden at Tioman Island" class="hero__photo" width="700" height="516" decoding="async">
+      <img data-src="dive-3.webp" alt="Turtle encounter in Tioman waters" class="hero__photo" width="720" height="551" decoding="async">
     </div>
   </div>
-  <div class="hero__content">
+  <div class="hero__content" id="main">
     <div data-i18n="hero.eyebrow" class="hero__eyebrow" id="heroEyebrow">Paya Village, Tioman Island</div>
     <h1 class="hero__title" id="heroTitle" data-i18n="hero.title" data-i18n-html>ONE ISLAND<br>ENDLESS<br>DEPTHS<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;"> — UDIVE Tioman: PADI 5 Star Scuba Diving Courses &amp; Certification, Tioman Island, Malaysia</span></h1>
     <p class="hero__script" id="heroScript" data-i18n="hero.script">From your first breath to your best dive</p>
     <p class="hero__subtitle" id="heroSubtitle">Beneath the surface lies a universe you've never seen. Professional diving experiences that transform the way you see the ocean — and yourself.</p>
     <div class="hero__ctas" id="heroCtas">
+      <a href="https://wa.me/60122459883?text=Hi%2C%20I%20found%20UDIVE%20Tioman%20through%20your%20official%20website%20and%20would%20like%20to%20plan%20a%20Tioman%20dive%20trip.%20Could%20you%20assist%20me%3F" class="btn btn--glass hero__book-cta" data-i18n="hero.book" target="_blank" rel="noopener">Book a Dive</a>
       <a href="#about" class="btn btn--glass" data-i18n="hero.about">About Us</a>
       <a href="#stay" class="btn btn--glass" data-i18n="hero.stay">Stay</a>
       <a href="#courses" class="btn btn--glass" data-i18n="hero.courses">Courses</a>
@@ -261,8 +270,8 @@
   <!-- About Us panel — slides in from the right -->
   <div class="hero__about-panel" id="heroAboutPanel">
     <div class="hero__about-badges">
-      <img src="padi-cdc.png" alt="PADI CDC" class="hero__badge" loading="lazy">
-      <img src="padi-5star.png" alt="PADI 5 Star IDC" class="hero__badge" loading="lazy">
+      <img data-src="padi-cdc.webp" alt="PADI CDC" class="hero__badge" width="404" height="520" decoding="async">
+      <img data-src="padi-5star.webp" alt="PADI 5 Star IDC" class="hero__badge" width="396" height="520" decoding="async">
     </div>
     <div class="hero__about-inner">
       <h3 class="hero__about-heading">Est. Since 2010</h3>
@@ -276,7 +285,7 @@
     </button>
   </div>
   <!-- Event poster — fades in on desktop when "Our Event" is clicked -->
-  <img src="event-poster.png" alt="UDIVE Tioman Event Poster" class="hero__event-poster" id="heroEventPoster">
+  <img data-src="event-poster.webp" alt="UDIVE Tioman Event Poster" class="hero__event-poster" id="heroEventPoster" width="781" height="1100" decoding="async">
   <div class="hero__scroll" id="heroScroll" style="display:none">
     <span>Scroll</span>
     <div class="hero__scroll-chevron">
@@ -340,12 +349,15 @@
           <p class="kh-curtain-label" style="color:var(--color-accent)">OUR ROOM</p>
           <p class="kh-back-body">Seaview Chalet is owned by UDIVE. Total has 14 rooms with terrace and sea view. 340meters away from dive center, about a 5-minute walk. Provided cozy and tidy room with sunset view, in peace and quiet location.</p>
           <div class="kh-room-gallery">
-            <img src="room-1.png" alt="Seaview Chalet room interior" class="kh-room-photo" loading="lazy">
-            <img src="room-2.png" alt="Seaview Chalet terrace view" class="kh-room-photo" loading="lazy">
-            <img src="room-3.png" alt="Seaview Chalet exterior" class="kh-room-photo" loading="lazy">
-            <img src="room-bg.png" alt="Seaview Chalet beach scene" class="kh-room-photo" loading="lazy">
+            <img src="room-1.webp" alt="Seaview Chalet room interior" class="kh-room-photo" loading="lazy" decoding="async" width="642" height="616">
+            <img src="room-2.webp" alt="Seaview Chalet terrace view" class="kh-room-photo" loading="lazy" decoding="async" width="444" height="588">
+            <img src="room-3.webp" alt="Seaview Chalet exterior" class="kh-room-photo" loading="lazy" decoding="async" width="900" height="564">
+            <img src="room-bg.webp" alt="Seaview Chalet beach scene" class="kh-room-photo" loading="lazy" decoding="async" width="996" height="542">
           </div>
           <p class="kh-back-quote">Your Island Home</p>
+          <div class="kh-back-ctas">
+            <a href="https://wa.me/60122459883?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20Seaview%20Chalet%20room%20availability%20and%20dates%20at%20UDIVE%20Tioman." class="btn btn--primary" data-i18n="stay.ask" target="_blank" rel="noopener">Ask about availability</a>
+          </div>
         </div>
 
         <!-- FRONT: cover that flips open -->
@@ -356,7 +368,7 @@
           <div class="kh-curtain-top">
             <span class="kh-curtain-label">OUR ROOM</span>
           </div>
-          <div class="kh-curtain-center" style="background-image:url('room-bg.png')">
+          <div class="kh-curtain-center" style="background-image:url('room-bg.webp')">
             <div class="kh-curtain-center-overlay"></div>
             <h3 class="kh-room-title">「The Little White House」</h3>
           </div>
@@ -414,9 +426,6 @@
 <!-- ═══════════════════════════════════════
      COURSES — sticky chapter scroll
 ═══════════════════════════════════════ -->
-<!-- ═══════════════════════════════════════
-     OUR PROGRAMS — pin chapters
-═══════════════════════════════════════ -->
 <section class="pin-intro" id="courses">
   <div class="container">
     <p data-i18n="courses.eyebrow" class="pin-intro__kicker">Our Programs</p>
@@ -426,7 +435,7 @@
 </section>
 
 <div class="pin-wrap" id="pin-wrap">
-  <div class="pin-progress-dots" id="pin-dots" aria-hidden="true"></div>
+  <div class="pin-progress-dots" id="pin-dots"></div>
 
   <div class="pin-scene" id="pin-scene">
     <div class="pin-chapters" id="pin-chapters">
@@ -484,11 +493,10 @@
             <div><span>Seaview Double</span><strong>RM 1,750</strong></div>
             <div><span>Seaview Single</span><strong>RM 2,170</strong></div>
           </div>
-          <a href="#book" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive">Dive Now</a>
+          <a href="https://wa.me/60122459883?text=Hi%2C%20I%27m%20interested%20in%20the%20PADI%20Open%20Water%20Diver%20course%20at%20UDIVE%20Tioman.%20Could%20you%20share%20dates%20and%20details%3F" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive" target="_blank" rel="noopener">Enquire on WhatsApp</a>
         </div>
       </div>
 
-      <!-- Panel 02 AOW -->
       <div class="pin-panel" data-i="1">
         <div class="pin-card">
           <span class="pin-card__tag">Advance</span>
@@ -507,11 +515,10 @@
             <div><span>Seaview Double</span><strong>RM 1,490</strong></div>
             <div><span>Seaview Single</span><strong>RM 1,770</strong></div>
           </div>
-          <a href="#book" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive">Dive Now</a>
+          <a href="https://wa.me/60122459883?text=Hi%2C%20I%27m%20interested%20in%20the%20PADI%20Advanced%20Open%20Water%20course%20at%20UDIVE%20Tioman.%20Could%20you%20share%20dates%20and%20details%3F" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive" target="_blank" rel="noopener">Enquire on WhatsApp</a>
         </div>
       </div>
 
-      <!-- Panel 03 Rescue -->
       <div class="pin-panel" data-i="2">
         <div class="pin-card">
           <span class="pin-card__tag">Rescue</span>
@@ -530,11 +537,10 @@
             <div><span>Seaview Double</span><strong>RM 1,870</strong></div>
             <div><span>Seaview Single</span><strong>RM 2,170</strong></div>
           </div>
-          <a href="#book" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive">Dive Now</a>
+          <a href="https://wa.me/60122459883?text=Hi%2C%20I%27m%20interested%20in%20the%20Rescue%20Diver%20%26%20EFR%20course%20at%20UDIVE%20Tioman.%20Could%20you%20share%20dates%20and%20details%3F" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive" target="_blank" rel="noopener">Enquire on WhatsApp</a>
         </div>
       </div>
 
-      <!-- Panel 04 Fun Dive -->
       <div class="pin-panel" data-i="3">
         <div class="pin-card">
           <span class="pin-card__tag">Fun Dive</span>
@@ -553,11 +559,10 @@
             <div><span>4D3N W/O Acc. (own gear)</span><strong>RM 590</strong></div>
             <div><span>4D3N Twin (full rental)</span><strong>RM 1,060</strong></div>
           </div>
-          <a href="#book" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive">Dive Now</a>
+          <a href="https://wa.me/60122459883?text=Hi%2C%20I%27m%20interested%20in%20Fun%20Dive%20packages%20at%20UDIVE%20Tioman.%20Could%20you%20share%20availability%3F" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive" target="_blank" rel="noopener">Enquire on WhatsApp</a>
         </div>
       </div>
 
-      <!-- Panel 05 Freediver -->
       <div class="pin-panel" data-i="4">
         <div class="pin-card">
           <span class="pin-card__tag">Freedive</span>
@@ -576,7 +581,7 @@
             <div><span>Adv. Freediver W/O Acc.</span><strong>RM 1,690</strong></div>
             <div><span>Adv. Freediver Twin</span><strong>RM 1,890</strong></div>
           </div>
-          <a href="#book" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive">Dive Now</a>
+          <a href="https://wa.me/60122459883?text=Hi%2C%20I%27m%20interested%20in%20the%20Freediver%20course%20at%20UDIVE%20Tioman.%20Could%20you%20share%20dates%20and%20details%3F" class="btn btn--primary pin-card__cta" data-i18n="pricing.dive" target="_blank" rel="noopener">Enquire on WhatsApp</a>
         </div>
       </div>
     </div>
@@ -594,7 +599,7 @@
   </div>
   <div class="map-layout">
     <div class="map-sticky">
-      <img src="刁曼岛地图_移除黄色路径.png" alt="Tioman Island Map" class="map-image" loading="lazy">
+      <img src="tioman-map.webp" alt="Tioman Island Map" class="map-image" loading="lazy" decoding="async" width="1400" height="1400">
       
       
     </div>
@@ -655,7 +660,7 @@
     </div>
     <div class="team__grid">
       <div class="team__member team__member--featured" data-anim="fadeInUp" data-delay="0">
-        <div class="team__avatar"><img src="team.jpg" alt="Steven Sim" loading="lazy"></div>
+        <div class="team__avatar"><img src="team.webp" alt="Steven Sim" loading="lazy" decoding="async" width="597" height="600"></div>
         <h4 class="team__name">Steven Sim</h4>
         <p class="team__role">PADI Course Director</p>
         <p class="team__bio">8,000+ dives. Teaching since 2010. Specializes in technical diving and marine conservation.</p>
@@ -727,12 +732,12 @@
       <h2 class="section__title" data-anim="fadeInUp" data-delay="100">Follow the <em>Journey</em></h2>
     </div>
     <div class="instagram__grid" data-anim="fadeIn" data-delay="100">
-      <a class="instagram__item" href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" target="_blank" rel="noopener" aria-label="UDIVE Tioman group photo on Instagram"><img src="community-group.jpg" alt="UDIVE Tioman team group photo at Paya Village" loading="lazy" style="object-position:50% 38%"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
-      <a class="instagram__item" href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" target="_blank" rel="noopener" aria-label="UDIVE Tioman community on Instagram"><img src="community-group.jpg" alt="UDIVE instructors and divers group photo" loading="lazy" style="object-position:50% 52%"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
-      <a class="instagram__item" href="https://www.instagram.com/p/DbX34oYlDXy/" target="_blank" rel="noopener" aria-label="UDIVE Advanced Open Water celebration on Instagram"><img src="community-ig-cert.jpg" alt="UDIVE Tioman Advanced Open Water certification celebration" loading="lazy"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
-      <a class="instagram__item" href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" target="_blank" rel="noopener" aria-label="UDIVE Tioman group photo on Instagram"><img src="community-group.jpg" alt="UDIVE Tioman group photo by the dive center" loading="lazy" style="object-position:28% 50%"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
-      <a class="instagram__item" href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" target="_blank" rel="noopener" aria-label="UDIVE Tioman community on Instagram"><img src="community-group.jpg" alt="UDIVE team and guests at Tioman Island" loading="lazy" style="object-position:72% 50%"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
-      <a class="instagram__item" href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" target="_blank" rel="noopener" aria-label="UDIVE Tioman group photo on Instagram"><img src="community-group.jpg" alt="UDIVE Tioman community group photo" loading="lazy" style="object-position:50% 62%"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+      <a class="instagram__item" href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" target="_blank" rel="noopener" aria-label="UDIVE Tioman group photo on Instagram"><img src="community-group.webp" alt="UDIVE Tioman team group photo at Paya Village" loading="lazy" decoding="async" width="700" height="516" style="object-position:50% 38%"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+      <a class="instagram__item" href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" target="_blank" rel="noopener" aria-label="UDIVE Tioman community on Instagram"><img src="community-group.webp" alt="UDIVE instructors and divers group photo" loading="lazy" decoding="async" width="700" height="516" style="object-position:50% 52%"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+      <a class="instagram__item" href="https://www.instagram.com/p/DbX34oYlDXy/" target="_blank" rel="noopener" aria-label="UDIVE Advanced Open Water celebration on Instagram"><img src="community-ig-cert.webp" alt="UDIVE Tioman Advanced Open Water certification celebration" loading="lazy" decoding="async" width="720" height="900"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+      <a class="instagram__item" href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" target="_blank" rel="noopener" aria-label="UDIVE Tioman group photo on Instagram"><img src="community-group.webp" alt="UDIVE Tioman group photo by the dive center" loading="lazy" decoding="async" width="700" height="516" style="object-position:28% 50%"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+      <a class="instagram__item" href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" target="_blank" rel="noopener" aria-label="UDIVE Tioman community on Instagram"><img src="community-group.webp" alt="UDIVE team and guests at Tioman Island" loading="lazy" decoding="async" width="700" height="516" style="object-position:72% 50%"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+      <a class="instagram__item" href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" target="_blank" rel="noopener" aria-label="UDIVE Tioman group photo on Instagram"><img src="community-group.webp" alt="UDIVE Tioman community group photo" loading="lazy" decoding="async" width="700" height="516" style="object-position:50% 62%"><div class="instagram__item-overlay"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
     </div>
     <div class="instagram__handle" data-anim="fadeInUp" data-delay="200">
       <a href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" target="_blank" rel="noopener">
@@ -754,28 +759,28 @@
     </div>
     <div class="faq__list">
       <div class="faq__item" data-anim="fadeInUp" data-delay="0">
-        <button class="faq__q">I've never dived before. Is it safe?<span class="faq__icon"></span></button>
-        <div class="faq__a"><p class="faq__a-text">Absolutely. Our Discover Scuba Diving program is designed for complete beginners. You'll start in shallow water with one-on-one instructor supervision. PADI's safety record is exceptional, and our instructors are trained to ensure your comfort at every step.</p></div>
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a-1">I've never dived before. Is it safe?<span class="faq__icon"></span></button>
+        <div class="faq__a" id="faq-a-1"><p class="faq__a-text">Absolutely. Our Discover Scuba Diving program is designed for complete beginners. You'll start in shallow water with one-on-one instructor supervision. PADI's safety record is exceptional, and our instructors are trained to ensure your comfort at every step.</p></div>
       </div>
       <div class="faq__item" data-anim="fadeInUp" data-delay="60">
-        <button class="faq__q">Do I need to know how to swim?<span class="faq__icon"></span></button>
-        <div class="faq__a"><p class="faq__a-text">For Discover Scuba Diving, basic water comfort is enough. For Open Water certification, PADI requires a 200m swim or 300m snorkel and a 10-minute float. Most people find this very manageable.</p></div>
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a-2">Do I need to know how to swim?<span class="faq__icon"></span></button>
+        <div class="faq__a" id="faq-a-2"><p class="faq__a-text">For Discover Scuba Diving, basic water comfort is enough. For Open Water certification, PADI requires a 200m swim or 300m snorkel and a 10-minute float. Most people find this very manageable.</p></div>
       </div>
       <div class="faq__item" data-anim="fadeInUp" data-delay="120">
-        <button class="faq__q">What's included in the course price?<span class="faq__icon"></span></button>
-        <div class="faq__a"><p class="faq__a-text">All equipment rental (BCD, regulator, wetsuit, fins, mask), PADI materials, instructor fees, boat transfers to dive sites, and certification processing. Bring swimwear, sunscreen, and a sense of adventure.</p></div>
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a-3">What's included in the course price?<span class="faq__icon"></span></button>
+        <div class="faq__a" id="faq-a-3"><p class="faq__a-text">All equipment rental (BCD, regulator, wetsuit, fins, mask), PADI materials, instructor fees, boat transfers to dive sites, and certification processing. Bring swimwear, sunscreen, and a sense of adventure.</p></div>
       </div>
       <div class="faq__item" data-anim="fadeInUp" data-delay="180">
-        <button class="faq__q">When is the best time to dive in Tioman?<span class="faq__icon"></span></button>
-        <div class="faq__a"><p class="faq__a-text">March to October brings the calmest seas and best visibility (20–30m). November to February is monsoon season — some operators close, but Udive runs select trips for experienced divers.</p></div>
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a-4">When is the best time to dive in Tioman?<span class="faq__icon"></span></button>
+        <div class="faq__a" id="faq-a-4"><p class="faq__a-text">March to October brings the calmest seas and best visibility (20–30m). November to February is monsoon season — some operators close, but Udive runs select trips for experienced divers.</p></div>
       </div>
       <div class="faq__item" data-anim="fadeInUp" data-delay="240">
-        <button class="faq__q">How do I get to Tioman Island?<span class="faq__icon"></span></button>
-        <div class="faq__a"><p class="faq__a-text">Take a ferry from Mersing Jetty (2 hours) or Tanjung Gemok (1.5 hours). Ferries run daily. We can arrange your ferry booking as part of your dive package. From Singapore, it's a 3.5-hour drive to Mersing plus the ferry.</p></div>
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a-5">How do I get to Tioman Island?<span class="faq__icon"></span></button>
+        <div class="faq__a" id="faq-a-5"><p class="faq__a-text">Take a ferry from Mersing Jetty (2 hours) or Tanjung Gemok (1.5 hours). Ferries run daily. We can arrange your ferry booking as part of your dive package. From Singapore, it's a 3.5-hour drive to Mersing plus the ferry.</p></div>
       </div>
       <div class="faq__item" data-anim="fadeInUp" data-delay="300">
-        <button class="faq__q">Can I book in Chinese? 可以用中文预订吗？<span class="faq__icon"></span></button>
-        <div class="faq__a"><p class="faq__a-text">Yes! We have Mandarin-speaking instructors and staff. You can message us on WeChat, WhatsApp, or Instagram in Chinese. 我们有说普通话的教练和员工，欢迎用中文联系我们！</p></div>
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a-6">Can I book in Chinese? 可以用中文预订吗？<span class="faq__icon"></span></button>
+        <div class="faq__a" id="faq-a-6"><p class="faq__a-text">Yes! We have Mandarin-speaking instructors and staff. You can message us on WeChat, WhatsApp, or Instagram in Chinese. 我们有说普通话的教练和员工，欢迎用中文联系我们！</p></div>
       </div>
     </div>
   </div>
@@ -790,8 +795,8 @@
       <h2 class="final-cta__title" data-anim="fadeInUp" data-delay="0">The Ocean Is<br><em>Waiting</em></h2>
       <p class="final-cta__desc" data-anim="fadeInUp" data-delay="120">Every day you wait is another day the underwater world remains unseen. Your first dive — or your next certification — is one message away.</p>
       <div class="final-cta__btns" data-anim="fadeInUp" data-delay="240">
-        <a href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" class="btn btn--primary" target="_blank" rel="noopener" data-i18n="cta.instagram">DM on Instagram</a>
-        <a href="#courses" class="btn btn--glass" data-i18n="hero.courses">Courses</a>
+        <a href="https://wa.me/60122459883?text=Hi%2C%20I%20found%20UDIVE%20Tioman%20through%20your%20official%20website%20and%20would%20like%20to%20enquire%20about%20diving%20or%20accommodation.%20Could%20you%20assist%20me%3F" class="btn btn--primary" data-i18n="cta.whatsapp" target="_blank" rel="noopener">Book on WhatsApp</a>
+        <a href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" class="btn btn--glass" target="_blank" rel="noopener" data-i18n="cta.instagram">DM on Instagram</a>
       </div>
     </div>
   </div>
@@ -804,7 +809,7 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <img src="udive.png" alt="Udive" class="footer__logo">
+        <img src="udive.webp" alt="Udive" class="footer__logo" width="276" height="80" loading="lazy" decoding="async">
         <p data-i18n="footer.desc" class="footer__desc">Professional diving experiences in Tioman Island, Malaysia. PADI-certified courses, fun dives, and underwater adventures since 2010.</p>
       </div>
       <div>
@@ -830,6 +835,8 @@
         <h4 data-i18n="footer.contact" class="footer__heading">Contact</h4>
         <ul class="footer__links">
           <li><span data-i18n="footer.address" class="footer__link footer__link--static">Paya Village, Tioman Island, Malaysia</span></li>
+          <li><a href="https://wa.me/60122459883?text=Hi%2C%20I%20found%20UDIVE%20Tioman%20through%20your%20official%20website%20and%20would%20like%20to%20enquire%20about%20diving%20or%20accommodation.%20Could%20you%20assist%20me%3F" data-i18n="footer.whatsapp" class="footer__link" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="tel:+60122459883" class="footer__link">+60 12-245 9883</a></li>
           <li><a href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" data-i18n="footer.instagram" class="footer__link" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="https://www.instagram.com/udivemalaysia?igsh=dDEyMjlmMHhkMmlw&utm_source=qr" class="footer__link" target="_blank" rel="noopener">@udivemalaysia</a></li>
         </ul>
@@ -851,599 +858,12 @@
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.029 6.987 2.895a9.825 9.825 0 012.9 6.988c-.002 5.45-4.437 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.055 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.689 1.448h.005c6.558 0 11.893-5.335 11.896-11.893a11.821 11.821 0 00-3.488-8.413z"/>
   </svg>
+  <span class="wa-float__label" data-i18n="cta.whatsapp">Book on WhatsApp</span>
 </a>
 
-<!-- ═══════════════════════════════════════
-     SCRIPTS
-═══════════════════════════════════════ -->
-<script>
-gsap.registerPlugin(ScrollTrigger);
-
-/* ── Nav scroll effect + spy ── */
-const nav = document.getElementById('nav');
-const navLinks = document.querySelectorAll('.nav__link[data-section]');
-const sections = ['courses','team','faq','contact'];
-
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('nav--scrolled', window.scrollY > 80);
-  // scroll spy
-  let current = '';
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el && window.scrollY >= el.offsetTop - 120) current = id;
-  });
-  navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === current));
-}, { passive: true });
-
-/* ── Mobile nav drawer ── */
-(function() {
-  const btn = document.querySelector('.nav__mobile-btn');
-  const overlay = document.getElementById('navOverlay');
-  const drawer = document.getElementById('navDrawer');
-  const drawerLinks = drawer?.querySelectorAll('a');
-  if (!btn || !overlay || !drawer) return;
-  function open() { drawer.classList.add('open'); overlay.classList.add('open'); btn.classList.add('nav__mobile-btn--open'); }
-  function close() { drawer.classList.remove('open'); overlay.classList.remove('open'); btn.classList.remove('nav__mobile-btn--open'); }
-  btn.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
-  overlay.addEventListener('click', close);
-  drawerLinks?.forEach(a => a.addEventListener('click', () => setTimeout(close, 300)));
-  // Close on Escape
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
-})();
-
-/* ── Hero entrance (GSAP) ── */
-const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-const heroMobile = window.matchMedia('(max-width: 767px)').matches;
-heroTl
-  .to('#heroEyebrow', heroMobile
-    ? { opacity:1, duration:0.7, delay:0.2 }
-    : { opacity:1, y:0, duration:0.7, delay:0.2 })
-  .to('#heroTitle',   { opacity:1, y:0, duration:1.0 }, '-=0.4')
-  .to('#heroScript',  { opacity:1, y:0, duration:0.7 }, '-=0.5')
-  .to('#heroSubtitle',{ opacity:1, y:0, duration:0.8 }, '-=0.4')
-  .to('#heroCtas',    { opacity:1, duration:0.7 }, '-=0.4');
-
-/* Hero subtitle rotation (GSAP cross-fade) */
-const subtitles = [
-  "Beneath the surface lies a universe you've never seen. Professional diving experiences that transform the way you see the ocean — and yourself.",
-  "Weightless. Silent. Alive. There is nothing on Earth that compares to the feeling of breathing underwater.",
-  "Tioman Island holds secrets that only divers get to see. Crystal waters, ancient turtles, and coral forests that glow in the dark."
-];
-let subIdx = 0;
-const subEl = document.getElementById('heroSubtitle');
-function rotateSubtitle() {
-  subIdx = (subIdx + 1) % subtitles.length;
-  gsap.timeline()
-    .to(subEl, { opacity: 0, y: 12, duration: 0.35, ease: 'power2.in' })
-    .call(() => { subEl.textContent = subtitles[subIdx]; })
-    .to(subEl, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' });
-}
-setInterval(rotateSubtitle, 6000);
-
-/* Hero parallax */
-gsap.fromTo('#heroTitle', { opacity: 1, y: 0 }, {
-  scrollTrigger: { trigger:'.hero', start:'top top', end:'bottom top', scrub:true },
-  y: 100, opacity: 0.1, ease:'none'
-});
-
-/* ── Elementor-style scroll animations ── */
-const animObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const el = entry.target;
-    const delay = parseInt(el.dataset.delay || '0', 10);
-    const anim  = el.dataset.anim || 'fadeInUp';
-    el.style.animationDelay = delay + 'ms';
-    el.classList.add('el-in', anim);
-    animObserver.unobserve(el);
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('[data-anim]').forEach(el => animObserver.observe(el));
-
-/* ── FAQ accordion ── */
-document.querySelectorAll('.faq__q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.closest('.faq__item');
-    const open = item.classList.contains('open');
-    document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('open'));
-    if (!open) item.classList.add('open');
-  });
-});
-
-/* ── Particle canvas (with viewport pause) ── */
-(function () {
-  const canvas = document.getElementById('particleCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const PARTICLES = 55;
-  let particles = [];
-  let running = true;
-  let rafId = null;
-
-  function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
-  resize();
-  window.addEventListener('resize', resize, { passive:true });
-
-  class P {
-    constructor() { this.reset(); }
-    reset() {
-      this.x = Math.random() * canvas.width;
-      this.y = canvas.height + Math.random() * 80;
-      this.r = Math.random() * 2 + 0.4;
-      this.vy = Math.random() * 0.35 + 0.08;
-      this.a = Math.random() * 0.35 + 0.08;
-      this.w = Math.random() * Math.PI * 2;
-      this.ws = (Math.random() * 0.008) + 0.004;
-    }
-    update() {
-      this.y -= this.vy;
-      this.w += this.ws;
-      this.x += Math.sin(this.w) * 0.28;
-      if (this.y < -8) this.reset();
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(160,210,255,${this.a})`;
-      ctx.fill();
-    }
-  }
-
-  for (let i = 0; i < PARTICLES; i++) {
-    const p = new P();
-    p.y = Math.random() * canvas.height;
-    particles.push(p);
-  }
-
-  function loop() {
-    if (!running) { rafId = null; return; }
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p=>{p.update();p.draw();});
-    rafId = requestAnimationFrame(loop);
-  }
-
-  // Pause when hero leaves viewport
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    const obs = new IntersectionObserver(([entry]) => {
-      running = entry.isIntersecting;
-      if (running && !rafId) rafId = requestAnimationFrame(loop);
-    }, { threshold: 0 });
-    obs.observe(hero);
-  }
-
-  loop();
-})();
-
-/* ── Side-curtain: hover to open, leave to close ── */
-document.querySelectorAll('.kh-curtain-panel').forEach(panel => {
-  panel.addEventListener('mouseenter', () => {
-    panel.classList.add('is-open');
-  });
-  panel.addEventListener('mouseleave', () => {
-    panel.classList.remove('is-open');
-  });
-  // Touch/click support: toggle on click (no hover on touch)
-  panel.addEventListener('click', (e) => {
-    // Only toggle on touch or if it's a direct panel click (not a child button)
-    if (e.pointerType === 'touch' || !('ontouchstart' in window)) {
-      if (!e.target.closest('.kh-back-close')) {
-        panel.classList.toggle('is-open');
-      }
-    }
-  });
-  // Keep keyboard accessible: Enter/Space toggles, Esc closes
-  panel.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      panel.classList.toggle('is-open');
-    }
-    if (e.key === 'Escape') panel.classList.remove('is-open');
-  });
-  // Close button still works on touch
-  const closeBtn = panel.querySelector('.kh-back-close');
-  if (closeBtn) closeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    panel.classList.remove('is-open');
-  });
-});
-
-/* Smooth scroll — with pin section support */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const href = a.getAttribute('href');
-    if (href === '#courses') {
-      const target = document.getElementById('courses');
-      if (target) window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
-      return;
-    }
-    const t = document.querySelector(href);
-    if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
-  });
-});
-
-/* ── Pin chapters — Our Programs ── */
-(function initPinChapters() {
-  const wrapEl = document.getElementById('pin-wrap');
-  const dotsEl = document.getElementById('pin-dots');
-  const fillEl = document.getElementById('pin-bar-fill');
-  const chapters = [...document.querySelectorAll('.pin-chapter')];
-  const panels = [...document.querySelectorAll('.pin-panel')];
-  if (!wrapEl || !chapters.length) return;
-
-  const N = chapters.length;
-  const SCREENS_PER = 1.35;
-  let currentIndex = 0;
-  let desktop = window.matchMedia('(min-width: 900px)').matches;
-
-  function setHeight() {
-    desktop = window.matchMedia('(min-width: 900px)').matches;
-    wrapEl.style.height = desktop ? (N * SCREENS_PER * 100) + 'vh' : 'auto';
-  }
-  setHeight();
-
-  // progress dots
-  chapters.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'pin-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'Chapter ' + String(i + 1).padStart(2, '0'));
-    dot.addEventListener('click', () => scrollToChapter(i));
-    dotsEl.appendChild(dot);
-  });
-
-  function setActive(i) {
-    if (i === currentIndex) return;
-    currentIndex = i;
-    chapters.forEach((el, idx) => el.classList.toggle('active', idx === i));
-    panels.forEach((el, idx) => el.classList.toggle('visible', idx === i));
-    dotsEl.querySelectorAll('.pin-dot').forEach((el, idx) => el.classList.toggle('active', idx === i));
-    if (fillEl) fillEl.style.width = ((i + 1) / N * 100) + '%';
-  }
-
-  function scrollToChapter(i) {
-    if (!desktop) {
-      setActive(i);
-      const panel = panels[i];
-      if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      return;
-    }
-    const wrapTop = window.scrollY + wrapEl.getBoundingClientRect().top;
-    const target = wrapTop + (i / N) * wrapEl.offsetHeight + 8;
-    window.scrollTo({ top: target, behavior: 'smooth' });
-  }
-
-  chapters.forEach((ch, i) => ch.addEventListener('click', () => scrollToChapter(i)));
-
-  let st;
-  function bindScroll() {
-    if (st) { st.kill(); st = null; }
-    setHeight();
-    if (!desktop) {
-      setActive(0);
-      if (fillEl) fillEl.style.width = '100%';
-      return;
-    }
-    st = ScrollTrigger.create({
-      trigger: wrapEl,
-      start: 'top top',
-      end: 'bottom bottom',
-      onUpdate: self => {
-        const index = Math.min(N - 1, Math.floor(self.progress * N));
-        setActive(index);
-      }
-    });
-    setActive(0);
-    if (fillEl) fillEl.style.width = (1 / N * 100) + '%';
-  }
-
-  bindScroll();
-  window.addEventListener('resize', () => {
-    clearTimeout(window.__pinResize);
-    window.__pinResize = setTimeout(() => {
-      ScrollTrigger.refresh();
-      bindScroll();
-    }, 150);
-  });
-})();
-
-/* ── Intro overlay — light sweep then logo reveal ── */
-(function() {
-  const overlay = document.getElementById('introOverlay');
-  const beam = document.getElementById('introBeam');
-  const logo = document.getElementById('introLogo');
-  const divider = document.querySelector('.intro-overlay__divider');
-  const padi = document.getElementById('introPadi');
-  if (!overlay || !logo || !padi) return;
-
-  const tl = gsap.timeline({ ease: 'power1.out' });
-
-  // ① Light beam sweeps across screen — smooth & wide
-  tl.to(beam, { x: '200%', duration: 1.3, ease: 'sine.inOut', delay: 0.5 }, 0)
-    // ② Beam fades out gradually
-    .to(beam, { opacity: 0, duration: 0.5, ease: 'power1.in' }, '-=0.3')
-    // ③ Udive logo fades in from 0 → 0.6
-    .to(logo, { opacity: 0.6, duration: 1.4, ease: 'power2.out' }, '-=0.1')
-    // ④ Divider fades in
-    .to(divider, { opacity: 1, duration: 0.6 }, '-=0.4')
-    // ⑤ PADI fades in
-    .to(padi, { opacity: 1, duration: 1.2 }, '-=0.2')
-    // ⑥ Entire overlay fades out
-    .to(overlay, { opacity: 0, duration: 0.8, ease: 'power2.inOut', onComplete: () => { overlay.remove(); } }, '+=1.5');
-})();
-
-/* ── Internationalisation ── */
-(function() {
-  const LANG = {
-    'nav.courses':        { en: 'Courses', zh: '課程' },
-    'nav.sites':          { en: 'Dive Sites', zh: '潛點' },
-    'nav.team':           { en: 'Team', zh: '團隊' },
-    'nav.faq':            { en: 'FAQ', zh: '常見問題' },
-    'nav.contact':        { en: 'Contact', zh: '聯絡我們' },
-    'nav.book':           { en: 'Book Now', zh: '立即預訂' },
-    'nav.menu':           { en: 'Menu', zh: '選單' },
-    'hero.eyebrow':       { en: 'Paya Village, Tioman Island', zh: '刁曼島·Paya 村' },
-    'hero.title':         { en: 'ONE ISLAND<br>ENDLESS<br>DEPTHS<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;"> — UDIVE Tioman: PADI 5 Star Scuba Diving Courses &amp; Certification, Tioman Island, Malaysia</span>', zh: '一座島<br>無盡<br>深度<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;"> — UDIVE刁曼岛：PADI 5星潜水课程与认证</span>' },
-    'hero.script':        { en: 'From your first breath to your best dive', zh: '從第一口呼吸到最棒的一潛' },
-    'hero.start':         { en: 'Start Diving', zh: '開始潛水' },
-    'hero.about':         { en: 'About Us', zh: '關於我們' },
-    'hero.accommodation': { en: 'Accommodation', zh: '住宿' },
-    'hero.courses':       { en: 'Courses', zh: '課程' },
-    'hero.stay':          { en: 'Stay', zh: '住宿' },
-    'hero.contact':       { en: 'Contact Us', zh: '聯絡我們' },
-    'hero.event':         { en: 'Our Event', zh: '我們的活動' },
-    'hero.scroll':        { en: 'Scroll', zh: '往下' },
-    'hero.meta1':         { en: 'Years', zh: '年經驗' },
-    'hero.meta2':         { en: 'Certified', zh: '學員認證' },
-    'hero.meta3':         { en: 'Dive Sites', zh: '個潛點' },
-    'ticker.1':           { en: '15+ Years of Excellence', zh: '15+ 年卓越經驗' },
-    'ticker.2':           { en: '5,000+ Divers Certified', zh: '5,000+ 學員認證' },
-    'ticker.3':           { en: '20+ Tioman Dive Sites', zh: '20+ 刁曼潛點' },
-    'ticker.4':           { en: 'PADI 5 Star IDC Centre', zh: 'PADI 五星 IDC 中心' },
-    'ticker.5':           { en: 'Tioman Island, Malaysia', zh: '馬來西亞·刁曼島' },
-    'editorial.legacy':   { en: 'Our Legacy', zh: '我們的傳承' },
-    'editorial.years':    { en: 'Years of Excellence', zh: '卓越年資' },
-    'editorial.divers':   { en: 'Divers Certified', zh: '認證潛水員' },
-    'editorial.sites':    { en: 'Tioman Dive Sites', zh: '刁曼潛點' },
-    'editorial.quote':    { en: '\\\"Every dive is a story only you get to tell.\\\"', zh: '「每一次下潛，都是只有你能訴說的故事。」' },
-    'editorial.label1':   { en: '02 / THE EXPERIENCE', zh: '02 / 體驗' },
-    'editorial.title1':   { en: 'THE<br>EXPERIENCE', zh: '體<br>驗' },
-    'editorial.script1':  { en: 'Enter Another World', zh: '進入另一個世界' },
-    'editorial.label2':   { en: '03 / DEEP OCEAN', zh: '03 / 深海' },
-    'editorial.title2':   { en: 'WHERE SILENCE BECOMES YOUR BREATH.', zh: '寂靜即是你的呼吸。' },
-    'editorial.script2':  { en: 'Weightless. Boundless. Free.', zh: '無重。無界。自由。' },
-    'editorial.body2':    { en: 'Every descent is a journey into silence — a world where coral cathedrals glow.', zh: '每次下潛都是一趟寂靜之旅——那裡有發光的珊瑚大教堂。' },
-    'editorial.storylabel':{en: 'Our Story', zh: '我們的故事' },
-    'editorial.story1':   { en: 'At Udive, we don\\\'t teach diving. We guide transformations.', zh: '在 Udive，我們不教潛水，我們引導轉變。' },
-    'editorial.story2':   { en: 'Since 2010, we have guided thousands of divers into their first breath underwater.', zh: '自 2010 年，我們已引導上千位潛水員完成他們水下的第一次呼吸。' },
-    'editorial.view':     { en: 'View Courses', zh: '查看課程' },
-    'editorial.bottom':   { en: 'DEPTH / CLARITY / FREEDOM', zh: '深度 / 清澈 / 自由' },
-    'courses.eyebrow':    { en: 'Our Programs', zh: '我們的課程' },
-    'courses.title':      { en: 'A JOURNEY<br>THAT UNFOLDS<br>IN DEPTHS', zh: '深度<br>鋪展<br>的旅程' },
-    'courses.script':     { en: 'Choose Your Depth', zh: '選擇你的深度' },
-    'courses.body':       { en: 'Every diver\\\'s path is unique.', zh: '每位潛水員的路徑都獨一無二。' },
-    'courses.tags':       { en: 'CERTIFY / ADVANCE / RESCUE / FUN DIVE / FREEDIVER', zh: '認證 / 進階 / 救援 / 歡樂潛 / 自由潛' },
-    'ch1.chapter':        { en: 'Chapter One', zh: '第一章' },
-    'ch1.title':          { en: 'OPEN WATER<br>DIVER', zh: '開放水域<br>潛水員' },
-    'ch1.script':         { en: 'The World Opens Up', zh: '世界為你敞開' },
-    'ch1.body':           { en: 'The world\\\'s most popular certification. 3–4 days of theory, confined water and 4 open water dives to 18m.', zh: '全球最受歡迎的認證。3-4 天理論課程、平靜水域訓練及 4 次開放水域潛水至 18 米。' },
-    'ch2.chapter':        { en: 'Chapter Two', zh: '第二章' },
-    'ch2.title':          { en: 'ADVANCED<br>OPEN WATER', zh: '進階<br>開放水域' },
-    'ch2.script':         { en: 'Go Deeper', zh: '更深探索' },
-    'ch2.body':           { en: 'Five adventure dives including deep diving to 30m, navigation, and underwater photography.', zh: '五次探險潛水，含深潛至 30 米、導航及水下攝影。' },
-    'ch3.chapter':        { en: 'Chapter Three', zh: '第三章' },
-    'ch3.title':          { en: 'RESCUE<br>DIVER & EFR', zh: '救援<br>潛水員與 EFR' },
-    'ch3.script':         { en: 'Lead Others to Safety', zh: '帶領他人安全' },
-    'ch3.body':           { en: 'Become the diver others rely on. Accident prevention, self-rescue, and emergency management.', zh: '成為他人信賴的潛水員。事故預防、自救及應急處理。' },
-    'ch4.chapter':        { en: 'Chapter Four', zh: '第四章' },
-    'ch4.title':          { en: 'FUN DIVE<br>PACKAGES', zh: '歡樂潛<br>配套' },
-    'ch4.script':         { en: 'Explore Freely', zh: '自由探索' },
-    'ch4.body':           { en: 'Already certified? Join guided dives across Tioman\\\'s 20+ sites.', zh: '已有證照？加入刁曼 20+ 潛點的導潛之旅。' },
-    'ch4.tab1':           { en: '3D2N 4 Dives', zh: '3天2夜 4 潛' },
-    'ch4.tab2':           { en: '4D3N 6 Dives', zh: '4天3夜 6 潛' },
-    'ch4.footnote':       { en: 'Equipment rental included per package option above.', zh: '裝備租借按以上配套選項包含。' },
-    'ch5.chapter':        { en: 'Chapter Five', zh: '第五章' },
-    'ch5.freediver':      { en: 'Freediver', zh: '自由潛水員' },
-    'ch5.advanced':       { en: 'Advanced Freediver', zh: '進階自由潛水員' },
-    'team.eyebrow':       { en: 'The Team', zh: '團隊' },
-    'team.title':         { en: 'Dive with <em>Experts</em>', zh: '與<em>專家</em>共潛' },
-    'team.desc':          { en: 'PADI-certified professionals with thousands of dives.', zh: 'PADI 認證專業人士，擁有數千次潛水經驗。' },
-    'test.eyebrow':       { en: 'Voices from the Deep', zh: '深海之聲' },
-    'test.title':         { en: 'What Divers <em>Say</em>', zh: '潛友<em>說</em>' },
-    'ig.eyebrow':         { en: 'Community', zh: '社群' },
-    'ig.title':           { en: 'Follow the <em>Journey</em>', zh: '追蹤<em>旅程</em>' },
-    'faq.eyebrow':        { en: 'Common Questions', zh: '常見問題' },
-    'faq.title':          { en: 'Everything You Need to <em>Know</em>', zh: '你需要知道的<em>一切</em>' },
-    'faq.q1':             { en: 'I\\\'ve never dived before. Is it safe?', zh: '我從未潛過水。安全嗎？' },
-    'faq.q2':             { en: 'Do I need to know how to swim?', zh: '需要會游泳嗎？' },
-    'faq.q3':             { en: 'What\\\'s included in the course price?', zh: '課程價格包含什麼？' },
-    'faq.q4':             { en: 'When is the best time to dive in Tioman?', zh: '刁曼潛水的最佳季節？' },
-    'faq.q5':             { en: 'How do I get to Tioman Island?', zh: '如何前往刁曼島？' },
-    'cta.title':          { en: 'The Ocean Is<br><em>Waiting</em>', zh: '海洋<br>正在<em>等待</em>' },
-    'cta.desc':           { en: 'Every day you wait is another day the underwater world remains unseen.', zh: '你等待的每一天，都是水下世界未被看見的一天。' },
-    'cta.whatsapp':       { en: 'Book on WhatsApp', zh: '透過 WhatsApp 預訂' },
-    'cta.instagram':      { en: 'DM on Instagram', zh: 'Instagram 私訊' },
-    'footer.desc':        { en: 'Professional diving experiences in Tioman Island, Malaysia.', zh: '馬來西亞刁曼島專業潛水體驗。' },
-    'footer.courses':     { en: 'Courses', zh: '課程' },
-    'footer.explore':     { en: 'Explore', zh: '探索' },
-    'footer.packages':    { en: 'Packages', zh: '配套' },
-    'footer.accom':       { en: 'Accommodation', zh: '住宿' },
-    'footer.address':     { en: 'Paya Village, Tioman Island, Malaysia', zh: '馬來西亞刁曼島·Paya Village' },
-    'footer.copyright':   { en: '© 2026 Udive. All rights reserved. PADI 5 Star IDC.', zh: '© 2026 Udive. 版權所有。PADI 五星 IDC。' },
-    'footer.blog':        { en: 'Blog', zh: '部落格' },
-    'pricing.pricing':    { en: 'Pricing & Packages', zh: '價格與配套' },
-    'pricing.note':       { en: '* Price per person 每人价格', zh: '* 每人價格' },
-    'pricing.footnote':   { en: 'Includes PADI materials, equipment, instructor fees, boat transfers & certification.', zh: '包含 PADI 教材、裝備租借、教練費、船程及認證費。' },
-    'pricing.dive':       { en: 'Dive Now', zh: '立即下潛' },
-    'pricing.toggle':     { en: 'Pricing ▸', zh: '價格 ▸' },
-  };
-
-  function translate(lang) {
-    document.documentElement.lang = lang === 'zh' ? 'zh' : 'en';
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.dataset.i18n;
-      if (!LANG[key]) return;
-      const val = LANG[key][lang];
-      if (val === undefined) return;
-      if (el.dataset.i18nHtml !== undefined) {
-        el.innerHTML = val;
-      } else {
-        el.textContent = val;
-      }
-    });
-    // Nav buttons active state
-    document.querySelectorAll('#lang-en, #lang-zh, [data-lang]').forEach(btn => {
-      if (btn.id === 'lang-en' || btn.dataset.lang === 'en') btn.classList.toggle('active', lang === 'en');
-      if (btn.id === 'lang-zh' || btn.dataset.lang === 'zh') btn.classList.toggle('active', lang === 'zh');
-    });
-    localStorage.setItem('udive_lang', lang);
-  }
-
-  document.querySelectorAll('#lang-en, #lang-zh, [data-lang]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.id === 'lang-en' || btn.dataset.lang === 'en' ? 'en' : 'zh';
-      translate(lang);
-    });
-  });
-
-  const saved = localStorage.getItem('udive_lang');
-  translate(saved === 'zh' ? 'zh' : 'en');
-})();
-
-/* ── About Us toggle — right panel + left hero update ── */
-(function() {
-  const aboutBtn = document.querySelector('[data-i18n="hero.about"]');
-  if (!aboutBtn) return;
-  const panel = document.getElementById('heroAboutPanel');
-  if (!panel) return;
-  const backBtn = document.getElementById('heroAboutBack');
-  if (!backBtn) return;
-  const mapEl = document.querySelector('.hero__map-hover');
-
-  // Left hero elements to update
-  const eyebrowEl = document.getElementById('heroEyebrow');
-  const titleEl = document.getElementById('heroTitle');
-  const scriptEl = document.getElementById('heroScript');
-  const subEl = document.getElementById('heroSubtitle');
-
-  const orig = {
-    eyebrow: eyebrowEl?.getAttribute('data-i18n-orig') || eyebrowEl?.textContent || '',
-    title: titleEl?.getAttribute('data-i18n-orig') || titleEl?.innerHTML || '',
-    script: scriptEl?.getAttribute('data-i18n-orig') || scriptEl?.textContent || '',
-    sub: subEl?.getAttribute('data-i18n-orig') || subEl?.textContent || '',
-  };
-  // Save original content
-  if (eyebrowEl && !eyebrowEl.getAttribute('data-i18n-orig')) eyebrowEl.setAttribute('data-i18n-orig', orig.eyebrow);
-  if (titleEl && !titleEl.getAttribute('data-i18n-orig')) titleEl.setAttribute('data-i18n-orig', orig.title);
-  if (scriptEl && !scriptEl.getAttribute('data-i18n-orig')) scriptEl.setAttribute('data-i18n-orig', orig.script);
-  if (subEl && !subEl.getAttribute('data-i18n-orig')) subEl.setAttribute('data-i18n-orig', orig.sub);
-
-  let showing = false;
-
-  function toggleAbout(e) {
-    if (e) e.preventDefault();
-
-    if (!showing) {
-      // ── Open ──
-      // Update left hero content
-      if (eyebrowEl) eyebrowEl.textContent = 'Est. Since 2010';
-      if (titleEl) titleEl.innerHTML = 'ABOUT<br>UDIVE';
-      if (scriptEl) scriptEl.textContent = '';
-      if (subEl) subEl.textContent = '';
-      // GSAP: left content fade-in
-      const leftEls = [eyebrowEl, titleEl, scriptEl, subEl].filter(Boolean);
-      leftEls.forEach(el => { gsap.killTweensOf(el); gsap.set(el, { clearProps: 'transform' }); });
-      gsap.fromTo(leftEls,
-        { opacity: 0, x: -30 },
-        { opacity: 1, x: 0, duration: 0.8, stagger: 0.15, ease: 'power2.out' }
-      );
-      // Open right panel + stagger badges + text
-      panel.classList.add('open');
-      gsap.killTweensOf(panel);
-      gsap.set(panel, { clearProps: 'all' });
-      panel.classList.add('open');
-      const els = panel.querySelectorAll('.hero__about-badges, .hero__about-heading, .hero__about-text, .hero__about-divider, .hero__about-tagline');
-      gsap.fromTo(els,
-        { opacity: 0, x: 20 },
-        { opacity: 1, x: 0, duration: 0.7, stagger: 0.15, ease: 'power2.out', delay: 0.3 }
-      );
-      // Show map hover
-      if (mapEl) mapEl.classList.add('visible');
-      showing = true;
-    } else {
-      // ── Close ──
-      // Restore left hero content
-      if (eyebrowEl) eyebrowEl.textContent = orig.eyebrow;
-      if (titleEl) titleEl.innerHTML = orig.title;
-      if (scriptEl) scriptEl.textContent = orig.script;
-      if (subEl) subEl.textContent = orig.sub;
-      // GSAP: left content fade back
-      const leftEls = [eyebrowEl, titleEl, scriptEl, subEl].filter(Boolean);
-      leftEls.forEach(el => { gsap.killTweensOf(el); gsap.set(el, { clearProps: 'transform' }); });
-      gsap.fromTo(leftEls,
-        { opacity: 0, x: -20 },
-        { opacity: 1, x: 0, duration: 0.7, stagger: 0.12, ease: 'power2.out' }
-      );
-      // Close right panel
-      panel.classList.remove('open');
-      // Hide map hover
-      if (mapEl) mapEl.classList.remove('visible');
-      showing = false;
-    }
-  }
-
-  aboutBtn.addEventListener('click', toggleAbout);
-  aboutBtn.addEventListener('touchstart', function(e) { toggleAbout(e); }, { passive: false });
-  backBtn.addEventListener('click', toggleAbout);
-})();
-
-/* ── Our Event toggle — fade poster on right ── */
-(function() {
-  const eventBtn = document.querySelector('[data-i18n="hero.event"]');
-  const poster = document.getElementById('heroEventPoster');
-  if (!eventBtn || !poster) return;
-
-  // Start hidden: ensure CSS opacity 0
-  gsap.set(poster, { opacity: 0 });
-
-  eventBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const isOpen = poster.classList.toggle('open');
-
-    if (isOpen) {
-      gsap.killTweensOf(poster);
-      gsap.to(poster, { opacity: 1, duration: 4.8, ease: 'power2.out', overwrite: true });
-      eventBtn.textContent = 'Close';
-    } else {
-      gsap.killTweensOf(poster);
-      gsap.to(poster, { opacity: 0, duration: 0.5, ease: 'power2.out', overwrite: true });
-      eventBtn.textContent = 'Our Event';
-    }
-  });
-})();
-
-/* ── Map: pin highlight on card scroll ── */
-(function() {
-  const pins = document.querySelectorAll('.map-pin');
-  const cards = document.querySelectorAll('.map-card');
-  if (!pins.length || !cards.length) return;
-  const cardToPin = { 3: 0, 4: 1 };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const idx = [...cards].indexOf(entry.target);
-      const pinIdx = cardToPin[idx];
-      if (pinIdx !== undefined && pinIdx < pins.length) {
-        pins[pinIdx].classList.toggle('visible', entry.isIntersecting);
-      }
-    });
-  }, { threshold: 0.3 });
-  cards.forEach(c => observer.observe(c));
-})();
-
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="udive.js?v=26" defer></script>
 
 </body>
 </html>
