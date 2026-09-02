@@ -166,7 +166,7 @@
   <link rel="preload" as="image" href="udive.webp" fetchpriority="high">
   <link rel="preload" as="image" href="hero-bg-sm.webp" media="(max-width: 767px)">
   <link rel="preload" as="image" href="hero-bg.webp" media="(min-width: 768px)">
-  <link rel="stylesheet" href="udive-styles.css?v=25">
+  <link rel="stylesheet" href="udive-styles.css?v=26">
   <script>
     (function () {
       try {
@@ -424,7 +424,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════
-     COURSES — stacked card grid
+     COURSES — sticky chapter scroll
 ═══════════════════════════════════════ -->
 <section class="pin-intro" id="courses">
   <div class="container">
@@ -435,10 +435,10 @@
 </section>
 
 <div class="pin-wrap" id="pin-wrap">
-  <div class="pin-progress-dots" id="pin-dots" hidden aria-hidden="true"></div>
+  <div class="pin-progress-dots" id="pin-dots"></div>
 
   <div class="pin-scene" id="pin-scene">
-    <div class="pin-chapters" id="pin-chapters" hidden aria-hidden="true">
+    <div class="pin-chapters" id="pin-chapters">
       <button type="button" class="pin-chapter active" data-i="0">
         <span class="pin-chapter__num">01</span>
         <span class="pin-chapter__title">Open Water <em>Diver</em></span>
@@ -472,7 +472,7 @@
     </div>
 
     <div class="pin-panels" id="pin-panels">
-      <div class="pin-bar" hidden><div class="pin-bar__fill" id="pin-bar-fill"></div></div>
+      <div class="pin-bar"><div class="pin-bar__fill" id="pin-bar-fill"></div></div>
 
       <!-- Panel 01 OW -->
       <div class="pin-panel visible" data-i="0">
@@ -497,7 +497,7 @@
         </div>
       </div>
 
-      <div class="pin-panel visible" data-i="1">
+      <div class="pin-panel" data-i="1">
         <div class="pin-card">
           <span class="pin-card__tag">Advance</span>
           <h3 class="pin-card__title">Advanced Open Water</h3>
@@ -519,7 +519,7 @@
         </div>
       </div>
 
-      <div class="pin-panel visible" data-i="2">
+      <div class="pin-panel" data-i="2">
         <div class="pin-card">
           <span class="pin-card__tag">Rescue</span>
           <h3 class="pin-card__title">Rescue Diver &amp; EFR</h3>
@@ -541,7 +541,7 @@
         </div>
       </div>
 
-      <div class="pin-panel visible" data-i="3">
+      <div class="pin-panel" data-i="3">
         <div class="pin-card">
           <span class="pin-card__tag">Fun Dive</span>
           <h3 class="pin-card__title">Fun Dive Packages</h3>
@@ -563,7 +563,7 @@
         </div>
       </div>
 
-      <div class="pin-panel visible" data-i="4">
+      <div class="pin-panel" data-i="4">
         <div class="pin-card">
           <span class="pin-card__tag">Freedive</span>
           <h3 class="pin-card__title">Freediver Course</h3>
@@ -863,7 +863,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="udive.js?v=24" defer></script>
+<script src="udive.js?v=26" defer></script>
 
 </body>
 </html>

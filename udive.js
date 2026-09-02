@@ -301,7 +301,7 @@
     });
   });
 
-  /* ── Course cards ── */
+  /* ── Pin chapters ── */
   (function initPinChapters() {
     var wrapEl = document.getElementById('pin-wrap');
     var dotsEl = document.getElementById('pin-dots');
@@ -310,19 +310,95 @@
     var panels = Array.prototype.slice.call(document.querySelectorAll('.pin-panel'));
     if (!wrapEl || !chapters.length) return;
 
-    wrapEl.style.height = 'auto';
-    panels.forEach(function (el) { el.classList.add('visible'); });
-    if (fillEl) fillEl.style.width = '100%';
-    if (dotsEl) dotsEl.setAttribute('hidden', '');
+    var N = chapters.length;
+    var SCREENS_PER = 1.35;
+    var currentIndex = 0;
+    var desktop = window.matchMedia('(min-width: 900px)').matches;
+
+    function setHeight() {
+      desktop = window.matchMedia('(min-width: 900px)').matches;
+      wrapEl.style.height = desktop ? (N * SCREENS_PER * 100) + 'vh' : 'auto';
+    }
+    setHeight();
+
+    if (dotsEl) {
+      dotsEl.removeAttribute('hidden');
+      dotsEl.removeAttribute('aria-hidden');
+      chapters.forEach(function (_, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'pin-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Chapter ' + String(i + 1).padStart(2, '0'));
+        dot.addEventListener('click', function () { scrollToChapter(i); });
+        dotsEl.appendChild(dot);
+      });
+    }
+
+    function setActive(i) {
+      if (i === currentIndex && desktop) return;
+      currentIndex = i;
+      chapters.forEach(function (el, idx) { el.classList.toggle('active', idx === i); });
+      if (desktop) {
+        panels.forEach(function (el, idx) { el.classList.toggle('visible', idx === i); });
+      } else {
+        panels.forEach(function (el) { el.classList.add('visible'); });
+      }
+      if (dotsEl) {
+        dotsEl.querySelectorAll('.pin-dot').forEach(function (el, idx) {
+          el.classList.toggle('active', idx === i);
+        });
+      }
+      if (fillEl) fillEl.style.width = (((i + 1) / N) * 100) + '%';
+    }
 
     function scrollToChapter(i) {
-      var panel = panels[i];
-      if (panel) panel.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
-      chapters.forEach(function (el, idx) { el.classList.toggle('active', idx === i); });
+      if (!desktop) {
+        setActive(i);
+        var panel = panels[i];
+        if (panel) panel.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
+        return;
+      }
+      var wrapTop = window.scrollY + wrapEl.getBoundingClientRect().top;
+      var target = wrapTop + (i / N) * wrapEl.offsetHeight + 8;
+      window.scrollTo({ top: target, behavior: reduceMotion ? 'auto' : 'smooth' });
     }
 
     chapters.forEach(function (ch, i) {
       ch.addEventListener('click', function () { scrollToChapter(i); });
+    });
+
+    var st;
+    function bindScroll() {
+      if (st) { st.kill(); st = null; }
+      setHeight();
+      if (!desktop) {
+        panels.forEach(function (el) { el.classList.add('visible'); });
+        if (fillEl) fillEl.style.width = '100%';
+        return;
+      }
+      if (hasGsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+        st = ScrollTrigger.create({
+          trigger: wrapEl,
+          start: 'top top',
+          end: 'bottom bottom',
+          onUpdate: function (self) {
+            var index = Math.min(N - 1, Math.floor(self.progress * N));
+            setActive(index);
+          }
+        });
+      }
+      setActive(0);
+      if (fillEl) fillEl.style.width = ((1 / N) * 100) + '%';
+    }
+
+    bindScroll();
+    window.addEventListener('resize', function () {
+      clearTimeout(window.__pinResize);
+      window.__pinResize = setTimeout(function () {
+        if (hasGsap && window.ScrollTrigger) ScrollTrigger.refresh();
+        bindScroll();
+      }, 150);
     });
   })();
 
