@@ -1109,19 +1109,10 @@ ul { list-style:none; }
 
 .pin-wrap {
   position: relative;
+  height: auto !important;
 }
 .pin-progress-dots {
-  position: fixed;
-  right: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 40;
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-}
-@media (min-width: 1024px) {
-  .pin-progress-dots { display: flex; }
+  display: none !important;
 }
 .pin-dot {
   width: 6px;
@@ -1139,30 +1130,17 @@ ul { list-style:none; }
 }
 
 .pin-scene {
-  position: sticky;
-  top: 0;
-  height: 100dvh;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr;
+  position: relative;
+  top: auto;
+  height: auto;
+  overflow: visible;
+  display: block;
   background: transparent;
   border-top: 1px solid oklch(100% 0 0 / 0.08);
   border-bottom: 1px solid oklch(100% 0 0 / 0.08);
 }
-@media (min-width: 900px) {
-  .pin-scene { grid-template-columns: minmax(240px, 34%) 1fr; }
-}
 
-.pin-chapters {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: var(--space-10) var(--space-8);
-  border-right: 1px solid oklch(100% 0 0 / 0.1);
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  background: transparent;
-}
+.pin-chapters { display: none !important; }
 .pin-chapter {
   position: relative;
   display: block;
@@ -1254,19 +1232,32 @@ ul { list-style:none; }
 
 .pin-panels {
   position: relative;
-  overflow: hidden;
-  min-height: 70dvh;
+  overflow: visible;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  padding: var(--space-8) clamp(1.25rem, 4vw, 4rem) var(--space-12);
+  max-width: 1280px;
+  margin: 0 auto;
   background: transparent;
+}
+@media (min-width: 700px) {
+  .pin-panels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1100px) {
+  .pin-panels {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-8);
+  }
 }
 .pin-panels::before {
   display: none;
 }
 .pin-bar {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: oklch(100% 0 0 / 0.1);
-  z-index: 5;
+  display: none !important;
 }
 .pin-bar__fill {
   height: 100%;
@@ -1274,26 +1265,22 @@ ul { list-style:none; }
   background: var(--color-accent);
   transition: width 0.2s linear;
 }
-.pin-panel {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: var(--space-10) clamp(1.5rem, 4vw, 4rem) var(--space-10) var(--space-6);
-  opacity: 0;
-  transform: translateY(28px);
-  pointer-events: none;
-  transition: opacity 0.55s var(--ease-expo), transform 0.55s var(--ease-expo);
-}
+.pin-panel,
 .pin-panel.visible {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
   pointer-events: auto;
+  transition: none;
 }
 .pin-card {
-  width: min(100%, 380px);
+  width: 100%;
   position: relative;
   padding: var(--space-8);
   border-radius: 14px;
@@ -1302,10 +1289,10 @@ ul { list-style:none; }
   backdrop-filter: blur(18px) saturate(1.2);
   -webkit-backdrop-filter: blur(18px) saturate(1.2);
   box-shadow: 0 20px 48px oklch(0% 0 0 / 0.22);
-  margin-right: clamp(0.5rem, 2vw, 2.5rem);
+  margin-right: 0;
 }
 .pin-panel.visible .pin-card {
-  animation: pinSlideUp 0.7s var(--ease-expo) both;
+  animation: none;
 }
 @keyframes pinSlideUp {
   from { opacity: 0; transform: translateY(22px); }
@@ -1403,34 +1390,7 @@ ul { list-style:none; }
 }
 .pin-card__cta { width: 100%; justify-content: center; }
 
-@media (max-width: 899px) {
-  .pin-wrap { height: auto !important; }
-  .pin-scene {
-    position: relative;
-    height: auto;
-    overflow: visible;
-    background: transparent;
-  }
-  .pin-chapters { display: none; }
-  .pin-panels {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-    padding: var(--space-8) var(--space-5);
-    min-height: 0;
-  }
-  .pin-panels::before { display: none; }
-  .pin-bar { display: none; }
-  .pin-panel {
-    position: relative;
-    inset: auto;
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-    padding: 0;
-    justify-content: stretch;
-  }
-  .pin-card { width: 100%; margin-right: 0; }
+@media (max-width: 767px) {
   .pin-card__prices { grid-template-columns: 1fr; }
 }
 
@@ -1665,13 +1625,11 @@ body.nav-open { overflow: hidden; }
   .wa-float__label { display: inline; }
 }
 
-@media (max-width: 899px) {
-  .pin-panel,
-  .pin-panel.visible {
-    opacity: 1 !important;
-    transform: none !important;
-    pointer-events: auto;
-  }
+.pin-panel,
+.pin-panel.visible {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto;
 }
 
 #testimonials,
