@@ -1610,6 +1610,17 @@ body.nav-open { overflow: hidden; }
 }
 
 @media (max-width: 767px) {
+  html {
+    scroll-padding-top: 64px;
+    scroll-padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
+  .pin-panel,
+  .pin-panel.visible {
+    padding-bottom: 72px;
+  }
+  .final-cta {
+    padding-bottom: calc(var(--space-16) + 80px);
+  }
   .wa-float {
     left: 16px;
     right: 16px;
